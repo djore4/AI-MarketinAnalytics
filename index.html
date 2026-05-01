@@ -185,19 +185,74 @@
   .reveal.visible { opacity: 1; transform: translateY(0); }
   .divider { height: 1px; background: linear-gradient(90deg, var(--green), transparent); margin: 48px 0; opacity: 0.4; }
 
-  @media (max-width: 900px) {
-    nav { padding: 0 24px; }
+  @media (max-width: 768px) {
+    /* NAV */
+    nav { padding: 0 20px; height: 56px; }
     .nav-links { display: none; }
-    .hero { padding: 100px 32px 60px; }
-    section { padding: 60px 32px; }
+    .nav-logo { font-size: 1rem; }
+
+    /* HERO */
+    .hero { padding: 90px 24px 60px; }
+    .hero-title { font-size: clamp(2.2rem, 10vw, 3.5rem); margin-bottom: 20px; }
+    .hero-subtitle { font-size: 0.95rem; margin-bottom: 36px; }
+    .hero-meta { flex-direction: column; gap: 16px; }
+    .hero-meta-item span { font-size: 0.82rem; }
+    .hero-scroll { left: 24px; bottom: 28px; }
+
+    /* SECTIONS */
+    section { padding: 60px 24px; }
+    .section-header { gap: 16px; margin-bottom: 40px; }
+    .section-title { font-size: clamp(1.5rem, 6vw, 2rem); }
+
+    /* PONTO I — Card groups 2x2 */
+    .card-groups-wrapper { grid-template-columns: 1fr 1fr; gap: 14px; }
+    .card-group-label { font-size: 0.62rem; }
+    .card h3 { font-size: 0.78rem; }
+    .card p { font-size: 0.72rem; }
+
+    /* PONTO II — Personas 1 coluna */
     .persona-grid { grid-template-columns: 1fr; }
+
+    /* PONTO II — Oportunidades 1 coluna */
     .opp-grid { grid-template-columns: 1fr; }
+
+    /* PONTO III — Campanha */
+    .campanha-hero { padding: 36px 24px; }
+    .campanha-assinatura { font-size: clamp(1.1rem, 5vw, 1.6rem); }
+    .insight-box { padding: 28px 20px; }
+    .insight-text { font-size: clamp(0.95rem, 4vw, 1.2rem); }
+    .posts-grid { grid-template-columns: 1fr; }
+
+    /* PONTO IV — Fluxos 1 coluna */
     .fluxo-grid { grid-template-columns: 1fr; }
+
+    /* PONTO V — Funil 1 coluna */
     .funil-grid { grid-template-columns: 1fr; }
+    .insight-box > div[style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; gap: 16px !important; }
+
+    /* PONTO VI — Dashboard 1 coluna */
     .dash-grid { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 24px; text-align: center; }
+
+    /* TABLES */
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    table { min-width: 520px; }
+    thead th { font-size: 0.6rem; padding: 10px 12px; }
+    tbody td { padding: 10px 12px; font-size: 0.78rem; }
+
+    /* PROMPT BOX */
+    .prompt-box { padding: 16px 18px; }
+    .prompt-text { font-size: 0.72rem; }
+
+    /* FOOTER */
+    footer { flex-direction: column; gap: 20px; padding: 40px 24px; text-align: center; }
     .footer-info { text-align: center; }
-    .hero-meta { flex-direction: column; gap: 20px; }
+  }
+
+  @media (max-width: 420px) {
+    .card-groups-wrapper { grid-template-columns: 1fr; }
+    .hero-title { font-size: 2rem; }
+    section { padding: 48px 16px; }
+    .campanha-hero { padding: 28px 16px; }
   }
 </style>
 </head>
