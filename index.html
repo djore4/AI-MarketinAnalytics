@@ -17,899 +17,171 @@
     --grey-light: #C8D4E0;
     --border: #1E3047;
   }
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--navy);
-    color: var(--white);
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: rgba(13,27,42,0.92);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 64px;
-  }
-
-  .nav-logo {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
-    font-size: 1.1rem;
-    letter-spacing: -0.02em;
-    color: var(--white);
-    text-decoration: none;
-  }
-
+  body { background: var(--navy); color: var(--white); font-family: 'Poppins', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,27,42,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .nav-logo { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; color: var(--white); text-decoration: none; }
   .nav-logo span { color: var(--green); }
-
-  .nav-links {
-    display: flex;
-    gap: 6px;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--grey);
-    text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 6px;
-    transition: all 0.2s;
-    letter-spacing: 0.04em;
-  }
-
-  .nav-links a:hover {
-    color: var(--green);
-    background: var(--green-dim);
-  }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 120px 80px 80px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -200px; right: -200px;
-    width: 700px; height: 700px;
-    background: radial-gradient(circle, rgba(0,182,122,0.12) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -100px; left: -100px;
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(0,182,122,0.06) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--green);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 24px;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.2s forwards;
-  }
-
-  .hero-title {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
-    font-size: clamp(3rem, 6vw, 5.5rem);
-    line-height: 1.0;
-    letter-spacing: -0.03em;
-    margin-bottom: 32px;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.4s forwards;
-  }
-
+  .nav-links { display: flex; gap: 6px; list-style: none; }
+  .nav-links a { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--grey); text-decoration: none; padding: 6px 12px; border-radius: 6px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .nav-links a:hover { color: var(--green); background: var(--green-dim); }
+  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 120px 80px 80px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -200px; right: -200px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(0,182,122,0.12) 0%, transparent 70%); pointer-events: none; }
+  .hero::after { content: ''; position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(0,182,122,0.06) 0%, transparent 70%); pointer-events: none; }
+  .hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.75rem; color: var(--green); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 24px; opacity: 0; animation: fadeUp 0.8s 0.2s forwards; }
+  .hero-title { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: clamp(3rem, 6vw, 5.5rem); line-height: 1.0; letter-spacing: -0.03em; margin-bottom: 32px; opacity: 0; animation: fadeUp 0.8s 0.4s forwards; }
   .hero-title .accent { color: var(--green); }
-
-  .hero-subtitle {
-    font-size: 1.15rem;
-    color: var(--grey-light);
-    max-width: 560px;
-    margin-bottom: 60px;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.6s forwards;
-  }
-
-  .hero-meta {
-    display: flex;
-    gap: 48px;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.8s forwards;
-  }
-
-  .hero-meta-item label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--grey);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 4px;
-  }
-
-  .hero-meta-item span {
-    font-size: 0.9rem;
-    color: var(--grey-light);
-  }
-
-  .hero-scroll {
-    position: absolute;
-    bottom: 40px; left: 80px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.68rem;
-    color: var(--grey);
-    letter-spacing: 0.08em;
-    opacity: 0;
-    animation: fadeUp 0.8s 1.2s forwards;
-  }
-
-  .scroll-line {
-    width: 40px; height: 1px;
-    background: var(--green);
-    animation: lineGrow 1.5s 1.5s ease forwards;
-    transform-origin: left;
-    transform: scaleX(0);
-  }
-
+  .hero-subtitle { font-size: 1.15rem; color: var(--grey-light); max-width: 560px; margin-bottom: 60px; opacity: 0; animation: fadeUp 0.8s 0.6s forwards; }
+  .hero-meta { display: flex; gap: 48px; opacity: 0; animation: fadeUp 0.8s 0.8s forwards; }
+  .hero-meta-item label { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--grey); letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+  .hero-meta-item span { font-size: 0.9rem; color: var(--grey-light); }
+  .hero-scroll { position: absolute; bottom: 40px; left: 80px; display: flex; align-items: center; gap: 12px; font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--grey); letter-spacing: 0.08em; opacity: 0; animation: fadeUp 0.8s 1.2s forwards; }
+  .scroll-line { width: 40px; height: 1px; background: var(--green); animation: lineGrow 1.5s 1.5s ease forwards; transform-origin: left; transform: scaleX(0); }
   @keyframes lineGrow { to { transform: scaleX(1); } }
+  section { padding: 100px 80px; border-top: 1px solid var(--border); }
+  .section-header { display: flex; align-items: flex-start; gap: 40px; margin-bottom: 64px; }
+  .section-num { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--green); letter-spacing: 0.1em; margin-top: 6px; white-space: nowrap; }
+  .section-title { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: clamp(1.8rem, 3vw, 2.8rem); letter-spacing: -0.02em; line-height: 1.1; }
+  .section-title em { color: var(--green); font-style: normal; }
 
-  /* ── SECTION ── */
-  section {
-    padding: 100px 80px;
-    border-top: 1px solid var(--border);
-  }
+  /* ── CARD GROUPS ── */
+  .card-group { margin-bottom: 40px; }
+  .card-group:last-child { margin-bottom: 0; }
+  .card-group-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+  .card-group-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--green-dim); border: 1px solid var(--green); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+  .card-group-label { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--green); letter-spacing: 0.1em; text-transform: uppercase; }
+  .card-group-count { margin-left: auto; font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--grey); background: var(--navy-mid); border: 1px solid var(--border); border-radius: 20px; padding: 2px 10px; }
+  .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
 
-  .section-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
-    margin-bottom: 64px;
-  }
+  .card { background: var(--navy-mid); border: 1px solid var(--border); border-radius: 12px; padding: 24px; transition: border-color 0.3s, transform 0.3s; }
+  .card:hover { border-color: var(--green); transform: translateY(-4px); }
+  .card h3 { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.3; }
+  .card p { font-size: 0.83rem; color: var(--grey-light); line-height: 1.6; }
 
-  .section-num {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--green);
-    letter-spacing: 0.1em;
-    margin-top: 6px;
-    white-space: nowrap;
-  }
-
-  .section-title {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-  }
-
-  .section-title em {
-    color: var(--green);
-    font-style: normal;
-  }
-
-  /* ── CARDS ── */
-  .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-  }
-
-  .card {
-    background: var(--navy-mid);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 28px;
-    transition: border-color 0.3s, transform 0.3s;
-  }
-
-  .card:hover {
-    border-color: var(--green);
-    transform: translateY(-4px);
-  }
-
-  .card-tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--green);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-
-  .card h3 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 1.05rem;
-    margin-bottom: 10px;
-    line-height: 1.3;
-  }
-
-  .card p {
-    font-size: 0.88rem;
-    color: var(--grey-light);
-    line-height: 1.6;
-  }
-
-  /* ── PERSONA CARDS ── */
-  .persona-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-
-  .persona-card {
-    background: var(--navy-mid);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: border-color 0.3s, transform 0.3s;
-  }
-
-  .persona-card:hover {
-    border-color: var(--green);
-    transform: translateY(-4px);
-  }
-
-  .persona-header {
-    background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
-    padding: 28px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .persona-avatar {
-    width: 56px; height: 56px;
-    border-radius: 50%;
-    background: var(--green-dim);
-    border: 2px solid var(--green);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
-    font-size: 1.3rem;
-    color: var(--green);
-    margin-bottom: 16px;
-  }
-
-  .persona-name {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin-bottom: 4px;
-  }
-
-  .persona-role {
-    font-size: 0.8rem;
-    color: var(--grey);
-  }
-
+  /* ── PERSONA ── */
+  .persona-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .persona-card { background: var(--navy-mid); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: border-color 0.3s, transform 0.3s; }
+  .persona-card:hover { border-color: var(--green); transform: translateY(-4px); }
+  .persona-header { background: linear-gradient(135deg, var(--navy-light), var(--navy-mid)); padding: 28px; border-bottom: 1px solid var(--border); }
+  .persona-avatar { width: 56px; height: 56px; border-radius: 50%; background: var(--green-dim); border: 2px solid var(--green); display: flex; align-items: center; justify-content: center; font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.3rem; color: var(--green); margin-bottom: 16px; }
+  .persona-name { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 4px; }
+  .persona-role { font-size: 0.8rem; color: var(--grey); }
   .persona-body { padding: 24px; }
-
-  .persona-tag {
-    display: inline-block;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.62rem;
-    color: var(--green);
-    background: var(--green-dim);
-    border-radius: 4px;
-    padding: 3px 8px;
-    margin-bottom: 16px;
-    letter-spacing: 0.06em;
-  }
-
-  .persona-dores h4 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--grey);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 10px;
-  }
-
-  .persona-dores ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .persona-dores li {
-    font-size: 0.83rem;
-    color: var(--grey-light);
-    padding-left: 16px;
-    position: relative;
-    line-height: 1.5;
-  }
-
-  .persona-dores li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: var(--green);
-    font-size: 0.7rem;
-  }
-
-  .persona-quote {
-    margin-top: 20px;
-    padding: 14px 16px;
-    background: var(--navy);
-    border-left: 3px solid var(--green);
-    border-radius: 0 8px 8px 0;
-    font-size: 0.82rem;
-    color: var(--grey-light);
-    font-style: italic;
-    line-height: 1.5;
-  }
+  .persona-tag { display: inline-block; font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--green); background: var(--green-dim); border-radius: 4px; padding: 3px 8px; margin-bottom: 16px; letter-spacing: 0.06em; }
+  .persona-dores h4 { font-family: 'Poppins', sans-serif; font-size: 0.78rem; font-weight: 600; color: var(--grey); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+  .persona-dores ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .persona-dores li { font-size: 0.83rem; color: var(--grey-light); padding-left: 16px; position: relative; line-height: 1.5; }
+  .persona-dores li::before { content: '—'; position: absolute; left: 0; color: var(--green); font-size: 0.7rem; }
+  .persona-quote { margin-top: 20px; padding: 14px 16px; background: var(--navy); border-left: 3px solid var(--green); border-radius: 0 8px 8px 0; font-size: 0.82rem; color: var(--grey-light); font-style: italic; line-height: 1.5; }
 
   /* ── TABLE ── */
   .table-wrap { overflow-x: auto; }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.88rem;
-  }
-
-  thead th {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.68rem;
-    color: var(--green);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-align: left;
-    padding: 14px 16px;
-    border-bottom: 1px solid var(--green);
-    white-space: nowrap;
-  }
-
-  tbody td {
-    padding: 14px 16px;
-    border-bottom: 1px solid var(--border);
-    color: var(--grey-light);
-    vertical-align: top;
-    line-height: 1.5;
-  }
-
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  thead th { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--green); letter-spacing: 0.08em; text-transform: uppercase; text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--green); white-space: nowrap; }
+  tbody td { padding: 14px 16px; border-bottom: 1px solid var(--border); color: var(--grey-light); vertical-align: top; line-height: 1.5; }
   tbody tr:hover td { background: var(--navy-mid); }
+  tbody td:first-child { font-family: 'Poppins', sans-serif; font-weight: 600; color: var(--white); font-size: 0.85rem; }
 
-  tbody td:first-child {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: var(--white);
-    font-size: 0.85rem;
-  }
-
-  /* ── OPPORTUNITY CARDS ── */
-  .opp-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-bottom: 48px;
-  }
-
-  .opp-card {
-    background: var(--navy-mid);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 32px;
-    transition: all 0.3s;
-  }
-
+  /* ── OPP CARDS ── */
+  .opp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 48px; }
+  .opp-card { background: var(--navy-mid); border: 1px solid var(--border); border-radius: 16px; padding: 32px; transition: all 0.3s; }
   .opp-card:hover { border-color: var(--green); transform: translateY(-4px); }
-
-  .opp-letter {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
-    font-size: 3rem;
-    color: var(--green);
-    opacity: 0.3;
-    line-height: 1;
-    margin-bottom: 12px;
-  }
-
-  .opp-card h3 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    margin-bottom: 12px;
-  }
-
+  .opp-letter { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 3rem; color: var(--green); opacity: 0.3; line-height: 1; margin-bottom: 12px; }
+  .opp-card h3 { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 12px; }
   .opp-card p { font-size: 0.85rem; color: var(--grey-light); line-height: 1.6; }
 
   /* ── CAMPANHA ── */
-  .campanha-hero {
-    background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 60px;
-    text-align: center;
-    margin-bottom: 48px;
-    position: relative;
-    overflow: hidden;
-  }
+  .campanha-hero { background: linear-gradient(135deg, var(--navy-light), var(--navy-mid)); border: 1px solid var(--border); border-radius: 20px; padding: 60px; text-align: center; margin-bottom: 48px; position: relative; overflow: hidden; }
+  .campanha-hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(0,182,122,0.15) 0%, transparent 70%); }
+  .campanha-assinatura { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: clamp(1.5rem, 3vw, 2.5rem); line-height: 1.2; margin-bottom: 20px; letter-spacing: -0.02em; }
+  .campanha-tagline { font-family: 'DM Mono', monospace; font-size: 0.9rem; color: var(--green); letter-spacing: 0.08em; }
+  .insight-box { background: var(--navy); border: 1px solid var(--green); border-radius: 16px; padding: 40px; margin-bottom: 48px; }
+  .insight-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--green); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; }
+  .insight-text { font-family: 'Poppins', sans-serif; font-size: clamp(1.1rem, 2vw, 1.5rem); font-weight: 600; line-height: 1.4; letter-spacing: -0.01em; }
+  .insight-sub { margin-top: 20px; font-size: 0.9rem; color: var(--grey-light); line-height: 1.7; }
 
-  .campanha-hero::before {
-    content: '';
-    position: absolute;
-    top: -100px; right: -100px;
-    width: 300px; height: 300px;
-    background: radial-gradient(circle, rgba(0,182,122,0.15) 0%, transparent 70%);
-  }
-
-  .campanha-assinatura {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    line-height: 1.2;
-    margin-bottom: 20px;
-    letter-spacing: -0.02em;
-  }
-
-  .campanha-tagline {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.9rem;
-    color: var(--green);
-    letter-spacing: 0.08em;
-  }
-
-  .insight-box {
-    background: var(--navy);
-    border: 1px solid var(--green);
-    border-radius: 16px;
-    padding: 40px;
-    margin-bottom: 48px;
-  }
-
-  .insight-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.68rem;
-    color: var(--green);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-
-  .insight-text {
-    font-family: 'Poppins', sans-serif;
-    font-size: clamp(1.1rem, 2vw, 1.5rem);
-    font-weight: 600;
-    line-height: 1.4;
-    letter-spacing: -0.01em;
-  }
-
-  .insight-sub {
-    margin-top: 20px;
-    font-size: 0.9rem;
-    color: var(--grey-light);
-    line-height: 1.7;
-  }
-
-  /* ── POSTS GRID ── */
-  .posts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-  }
-
-  .post-card {
-    background: var(--navy-mid);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 24px;
-    transition: all 0.3s;
-  }
-
+  /* ── POSTS ── */
+  .posts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .post-card { background: var(--navy-mid); border: 1px solid var(--border); border-radius: 12px; padding: 24px; transition: all 0.3s; }
   .post-card:hover { border-color: var(--green); transform: translateY(-3px); }
-
-  .post-num {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--green);
-    letter-spacing: 0.1em;
-    margin-bottom: 8px;
-  }
-
-  .post-format {
-    display: inline-block;
-    font-size: 0.68rem;
-    color: var(--grey);
-    background: var(--navy);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 2px 8px;
-    margin-bottom: 12px;
-    font-family: 'DM Mono', monospace;
-  }
-
-  .post-card h3 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 0.95rem;
-    margin-bottom: 8px;
-    line-height: 1.3;
-  }
-
+  .post-num { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--green); letter-spacing: 0.1em; margin-bottom: 8px; }
+  .post-format { display: inline-block; font-size: 0.68rem; color: var(--grey); background: var(--navy); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; margin-bottom: 12px; font-family: 'DM Mono', monospace; }
+  .post-card h3 { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.3; }
   .post-card p { font-size: 0.82rem; color: var(--grey-light); line-height: 1.5; }
+  .post-obj { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 0.75rem; color: var(--grey); font-style: italic; }
 
-  .post-obj {
-    margin-top: 14px;
-    padding-top: 14px;
-    border-top: 1px solid var(--border);
-    font-size: 0.75rem;
-    color: var(--grey);
-    font-style: italic;
-  }
-
-  /* ── VIDEO SLOT ── */
-  .video-slot {
-    background: var(--navy-mid);
-    border: 2px dashed var(--border);
-    border-radius: 16px;
-    padding: 80px 40px;
-    text-align: center;
-    margin-top: 40px;
-    transition: border-color 0.3s;
-  }
-
+  /* ── VIDEO ── */
+  .video-slot { background: var(--navy-mid); border: 2px dashed var(--border); border-radius: 16px; padding: 80px 40px; text-align: center; margin-top: 40px; transition: border-color 0.3s; }
   .video-slot:hover { border-color: var(--green); }
-
-  .video-icon {
-    width: 64px; height: 64px;
-    border-radius: 50%;
-    background: var(--green-dim);
-    border: 2px solid var(--green);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    font-size: 1.5rem;
-  }
-
-  .video-slot h3 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-  }
-
+  .video-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--green-dim); border: 2px solid var(--green); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.5rem; }
+  .video-slot h3 { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 8px; }
   .video-slot p { font-size: 0.85rem; color: var(--grey); }
 
   /* ── FLUXO ── */
-  .fluxo-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-  }
-
-  .fluxo-card {
-    background: var(--navy-mid);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    overflow: hidden;
-  }
-
-  .fluxo-header {
-    padding: 20px 24px;
-    background: linear-gradient(90deg, var(--green-dim), transparent);
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .fluxo-header h3 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 0.95rem;
-  }
-
-  .fluxo-badge {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.62rem;
-    color: var(--green);
-    background: var(--green-dim);
-    border-radius: 4px;
-    padding: 3px 8px;
-    letter-spacing: 0.06em;
-    margin-left: auto;
-  }
-
+  .fluxo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .fluxo-card { background: var(--navy-mid); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+  .fluxo-header { padding: 20px 24px; background: linear-gradient(90deg, var(--green-dim), transparent); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; }
+  .fluxo-header h3 { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.95rem; }
+  .fluxo-badge { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--green); background: var(--green-dim); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.06em; margin-left: auto; }
   .fluxo-body { padding: 24px; }
-
-  .fluxo-step {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 20px;
-    align-items: flex-start;
-  }
-
+  .fluxo-step { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
   .fluxo-step:last-child { margin-bottom: 0; }
-
-  .step-num {
-    width: 28px; height: 28px;
-    border-radius: 50%;
-    background: var(--green-dim);
-    border: 1px solid var(--green);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--green);
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
-  .step-content h4 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-
+  .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--green-dim); border: 1px solid var(--green); display: flex; align-items: center; justify-content: center; font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--green); flex-shrink: 0; margin-top: 2px; }
+  .step-content h4 { font-family: 'Poppins', sans-serif; font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; }
   .step-content p { font-size: 0.78rem; color: var(--grey-light); line-height: 1.5; }
-
-  .step-connector {
-    width: 1px;
-    height: 20px;
-    background: var(--border);
-    margin-left: 13px;
-    margin-bottom: 4px;
-    margin-top: -8px;
-  }
+  .step-connector { width: 1px; height: 20px; background: var(--border); margin-left: 13px; margin-bottom: 4px; margin-top: -8px; }
 
   /* ── FUNIL ── */
-  .funil-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-
-  .funil-col {
-    background: var(--navy-mid);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    overflow: hidden;
-  }
-
-  .funil-header {
-    padding: 20px 24px;
-    text-align: center;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .funil-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--green);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-  }
-
-  .funil-title {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-  }
-
-  .funil-obj {
-    font-size: 0.75rem;
-    color: var(--grey);
-    margin-top: 4px;
-  }
-
+  .funil-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .funil-col { background: var(--navy-mid); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+  .funil-header { padding: 20px 24px; text-align: center; border-bottom: 1px solid var(--border); }
+  .funil-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--green); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+  .funil-title { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1rem; }
+  .funil-obj { font-size: 0.75rem; color: var(--grey); margin-top: 4px; }
   .funil-body { padding: 20px; }
-
-  .metric-item {
-    padding: 12px 0;
-    border-bottom: 1px solid var(--border);
-  }
-
+  .metric-item { padding: 12px 0; border-bottom: 1px solid var(--border); }
   .metric-item:last-child { border-bottom: none; }
-
-  .metric-name {
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-
+  .metric-name { font-family: 'Poppins', sans-serif; font-size: 0.82rem; font-weight: 600; margin-bottom: 4px; }
   .metric-desc { font-size: 0.75rem; color: var(--grey-light); line-height: 1.4; }
-
-  .metric-bench {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--green);
-    margin-top: 4px;
-  }
+  .metric-bench { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--green); margin-top: 4px; }
 
   /* ── DASHBOARD ── */
-  .dash-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-
-  .dash-module {
-    background: var(--navy-mid);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    overflow: hidden;
-  }
-
-  .dash-module-header {
-    padding: 16px 20px;
-    border-bottom: 1px solid var(--border);
-    background: linear-gradient(90deg, var(--green-dim), transparent);
-  }
-
-  .dash-module-num {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.62rem;
-    color: var(--green);
-    letter-spacing: 0.1em;
-    margin-bottom: 4px;
-  }
-
-  .dash-module-title {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 0.95rem;
-  }
-
+  .dash-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .dash-module { background: var(--navy-mid); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+  .dash-module-header { padding: 16px 20px; border-bottom: 1px solid var(--border); background: linear-gradient(90deg, var(--green-dim), transparent); }
+  .dash-module-num { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--green); letter-spacing: 0.1em; margin-bottom: 4px; }
+  .dash-module-title { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.95rem; }
   .dash-module-body { padding: 16px 20px; }
-
-  .dash-viz {
-    padding: 14px 0;
-    border-bottom: 1px solid var(--border);
-  }
-
+  .dash-viz { padding: 14px 0; border-bottom: 1px solid var(--border); }
   .dash-viz:last-child { border-bottom: none; }
-
-  .dash-viz-title {
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-
-  .dash-viz-source {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.62rem;
-    color: var(--grey);
-    margin-bottom: 6px;
-  }
-
+  .dash-viz-title { font-family: 'Poppins', sans-serif; font-size: 0.8rem; font-weight: 600; margin-bottom: 4px; }
+  .dash-viz-source { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--grey); margin-bottom: 6px; }
   .dash-viz-desc { font-size: 0.75rem; color: var(--grey-light); line-height: 1.4; }
 
   /* ── PROMPT BOX ── */
-  .prompt-box {
-    background: var(--navy);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--green);
-    border-radius: 0 12px 12px 0;
-    padding: 20px 24px;
-    margin-bottom: 48px;
-  }
+  .prompt-box { background: var(--navy); border: 1px solid var(--border); border-left: 3px solid var(--green); border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 48px; }
+  .prompt-label { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--green); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+  .prompt-text { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: var(--grey-light); line-height: 1.7; }
 
-  .prompt-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.62rem;
-    color: var(--green);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-
-  .prompt-text {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--grey-light);
-    line-height: 1.7;
-  }
-
-  /* ── PRIORITY TABLE ── */
-  .priority-badge {
-    display: inline-block;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.62rem;
-    padding: 3px 8px;
-    border-radius: 4px;
-    letter-spacing: 0.04em;
-  }
-
+  /* ── BADGES ── */
+  .priority-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 0.62rem; padding: 3px 8px; border-radius: 4px; letter-spacing: 0.04em; }
   .badge-high { background: rgba(0,182,122,0.15); color: var(--green); }
   .badge-med { background: rgba(255,180,0,0.12); color: #FFB400; }
   .badge-low { background: rgba(100,120,140,0.15); color: var(--grey); }
 
   /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 48px 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .footer-logo {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
-    font-size: 1.2rem;
-    letter-spacing: -0.02em;
-  }
-
+  footer { border-top: 1px solid var(--border); padding: 48px 80px; display: flex; align-items: center; justify-content: space-between; }
+  .footer-logo { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.2rem; letter-spacing: -0.02em; }
   .footer-logo span { color: var(--green); }
-
-  .footer-info {
-    text-align: right;
-    font-size: 0.8rem;
-    color: var(--grey);
-    line-height: 1.7;
-  }
+  .footer-info { text-align: right; font-size: 0.8rem; color: var(--grey); line-height: 1.7; }
 
   /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .divider { height: 1px; background: linear-gradient(90deg, var(--green), transparent); margin: 48px 0; opacity: 0.4; }
 
-  .reveal {
-    opacity: 0;
-    transform: translateY(32px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ── DIVIDER ── */
-  .divider {
-    height: 1px;
-    background: linear-gradient(90deg, var(--green), transparent);
-    margin: 48px 0;
-    opacity: 0.4;
-  }
-
-  /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     nav { padding: 0 24px; }
     .nav-links { display: none; }
@@ -928,7 +200,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#hero" class="nav-logo">Fleet<span>Wise</span></a>
   <ul class="nav-links">
@@ -941,14 +212,9 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <div class="hero" id="hero">
   <p class="hero-eyebrow">Trabalho Final de Módulo — PGDE Ed18-1</p>
-  <h1 class="hero-title">
-    Simplifique.<br>
-    Otimize.<br>
-    <span class="accent">Rentabilize.</span>
-  </h1>
+  <h1 class="hero-title">Simplifique.<br>Otimize.<br><span class="accent">Rentabilize.</span></h1>
   <p class="hero-subtitle">Estratégia de Marketing com IA aplicada à FleetWise Solutions — consultora independente de gestão de frotas para PMEs portuguesas.</p>
   <div class="hero-meta">
     <div class="hero-meta-item">
@@ -964,10 +230,7 @@
       <span>Maio 2026</span>
     </div>
   </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    SCROLL PARA EXPLORAR
-  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div>SCROLL PARA EXPLORAR</div>
 </div>
 
 <!-- PONTO I -->
@@ -982,61 +245,91 @@
     <div class="prompt-text">"És um consultor especialista em aplicações de Inteligência Artificial para empresas de serviços B2B. A FleetWise é uma startup portuguesa de gestão de frotas para PMEs, independente de locadoras, com proposta de valor centrada em otimização fiscal, redução de TCO e consultoria imparcial. Opera no segmento de frotas entre 3 e 30 viaturas. Faz um brainstorming estruturado de oportunidades de IA aplicáveis ao modelo de negócio, cobrindo as dimensões: aquisição de clientes, entrega do serviço, operação interna e produto."</div>
   </div>
 
-  <div class="cards-grid reveal">
-    <div class="card">
-      <div class="card-tag">Aquisição de Clientes</div>
-      <h3>Lead Scoring com Dados Públicos</h3>
-      <p>Cruzamento automático de CAE, número de trabalhadores e volume de negócios para identificar PMEs com perfil de frota provável e propensão à ineficiência fiscal — sem prospeção manual.</p>
+  <!-- GRUPO 1 -->
+  <div class="card-group reveal">
+    <div class="card-group-header">
+      <div class="card-group-icon">🎯</div>
+      <span class="card-group-label">Aquisição de Clientes</span>
+      <span class="card-group-count">3 iniciativas</span>
     </div>
-    <div class="card">
-      <div class="card-tag">Aquisição de Clientes</div>
-      <h3>Simulador PHEV/BEV Inteligente</h3>
-      <p>Motor de machine learning que personaliza resultados com base no perfil de utilização introduzido, tornando a recomendação precisa e a proposta difícil de ignorar.</p>
+    <div class="cards-grid">
+      <div class="card">
+        <h3>Lead Scoring com Dados Públicos</h3>
+        <p>Cruzamento automático de CAE, número de trabalhadores e volume de negócios para identificar PMEs com perfil de frota provável e propensão à ineficiência fiscal — sem prospeção manual.</p>
+      </div>
+      <div class="card">
+        <h3>Simulador PHEV/BEV Inteligente</h3>
+        <p>Motor de machine learning que personaliza resultados com base no perfil de utilização introduzido, tornando a recomendação precisa e a proposta difícil de ignorar.</p>
+      </div>
+      <div class="card">
+        <h3>Chatbot de Pré-qualificação</h3>
+        <p>Assistente conversacional que, em 5 perguntas, estima a ineficiência fiscal provável da frota do visitante e gera um relatório sumário automático — criando urgência para agendar reunião.</p>
+      </div>
     </div>
-    <div class="card">
-      <div class="card-tag">Aquisição de Clientes</div>
-      <h3>Chatbot de Pré-qualificação</h3>
-      <p>Assistente conversacional que, em 5 perguntas, estima a ineficiência fiscal provável da frota do visitante e gera um relatório sumário automático — criando urgência para agendar reunião.</p>
+  </div>
+
+  <!-- GRUPO 2 -->
+  <div class="card-group reveal">
+    <div class="card-group-header">
+      <div class="card-group-icon">⚙️</div>
+      <span class="card-group-label">Serviço</span>
+      <span class="card-group-count">3 iniciativas</span>
     </div>
-    <div class="card">
-      <div class="card-tag">Entrega do Serviço</div>
-      <h3>Auditoria TCO Automatizada</h3>
-      <p>OCR e NLP para leitura automática de faturas, contratos de renting e registos de manutenção — gerando rascunho de Radiografia TCO em horas em vez de dias.</p>
+    <div class="cards-grid">
+      <div class="card">
+        <h3>Auditoria TCO Automatizada</h3>
+        <p>OCR e NLP para leitura automática de faturas, contratos de renting e registos de manutenção — gerando rascunho de Radiografia TCO em horas em vez de dias.</p>
+      </div>
+      <div class="card">
+        <h3>Motor de Alertas Fiscais Proativos</h3>
+        <p>Sistema que monitoriza continuamente a frota e dispara alertas com impacto quantificado em euros — fim de contrato, tributação autónoma em risco, alterações legislativas.</p>
+      </div>
+      <div class="card">
+        <h3>Benchmarking Dinâmico Setorial</h3>
+        <p>À medida que a FleetWise acumula dados, a IA constrói benchmarks reais: "a tua frota custa 23% mais por km do que a média do setor jurídico com perfil similar".</p>
+      </div>
     </div>
-    <div class="card">
-      <div class="card-tag">Entrega do Serviço</div>
-      <h3>Motor de Alertas Fiscais Proativos</h3>
-      <p>Sistema que monitoriza continuamente a frota e dispara alertas com impacto quantificado em euros — fim de contrato, tributação autónoma em risco, alterações legislativas.</p>
+  </div>
+
+  <!-- GRUPO 3 -->
+  <div class="card-group reveal">
+    <div class="card-group-header">
+      <div class="card-group-icon">🔧</div>
+      <span class="card-group-label">Operação Interna</span>
+      <span class="card-group-count">2 iniciativas</span>
     </div>
-    <div class="card">
-      <div class="card-tag">Entrega do Serviço</div>
-      <h3>Benchmarking Dinâmico Setorial</h3>
-      <p>À medida que a FleetWise acumula dados, a IA constrói benchmarks reais: "a tua frota custa 23% mais por km do que a média do setor jurídico com perfil similar".</p>
+    <div class="cards-grid">
+      <div class="card">
+        <h3>Geração Automática de Relatórios</h3>
+        <p>LLMs para automatizar produção de relatórios TCO personalizados, propostas comerciais e comunicações de renovação — mantendo consistência de qualidade sem esforço manual.</p>
+      </div>
+      <div class="card">
+        <h3>Assistente de Fiscalidade</h3>
+        <p>Base de conhecimento com IA treinada sobre CIRC, benefícios BEV/PHEV e Tributação Autónoma, consultável em linguagem natural. Quando a lei muda, o assistente alerta.</p>
+      </div>
     </div>
-    <div class="card">
-      <div class="card-tag">Operação Interna</div>
-      <h3>Geração Automática de Relatórios</h3>
-      <p>LLMs para automatizar produção de relatórios TCO personalizados, propostas comerciais e comunicações de renovação — mantendo consistência de qualidade sem esforço manual.</p>
+  </div>
+
+  <!-- GRUPO 4 -->
+  <div class="card-group reveal">
+    <div class="card-group-header">
+      <div class="card-group-icon">📊</div>
+      <span class="card-group-label">Produto</span>
+      <span class="card-group-count">3 iniciativas</span>
     </div>
-    <div class="card">
-      <div class="card-tag">Operação Interna</div>
-      <h3>Assistente de Fiscalidade</h3>
-      <p>Base de conhecimento com IA treinada sobre CIRC, benefícios BEV/PHEV e Tributação Autónoma, consultável em linguagem natural. Quando a lei muda, o assistente alerta.</p>
-    </div>
-    <div class="card">
-      <div class="card-tag">Produto</div>
-      <h3>Dashboard Preditivo de TCO</h3>
-      <p>Em vez de mostrar o que aconteceu, a plataforma projeta o TCO dos próximos 12 meses com base em padrões de utilização e cenários de mercado — decisões antecipadas, não reativas.</p>
-    </div>
-    <div class="card">
-      <div class="card-tag">Produto</div>
-      <h3>Deteção de Risco de Churn</h3>
-      <p>Análise de padrões de utilização da plataforma, frequência de comunicação e NPS para detetar sinais precoces de desengagement — e agir antes que o cliente saia.</p>
-    </div>
-    <div class="card">
-      <div class="card-tag">Produto</div>
-      <h3>Comunicação Personalizada com IA</h3>
-      <p>O João Silva recebe uma mensagem direta com euros poupados. O Ricardo Azevedo recebe análise sofisticada com benchmarks setoriais. Mesma informação, linguagem diferente.</p>
+    <div class="cards-grid">
+      <div class="card">
+        <h3>Dashboard Preditivo de TCO</h3>
+        <p>Em vez de mostrar o que aconteceu, a plataforma projeta o TCO dos próximos 12 meses com base em padrões de utilização e cenários de mercado — decisões antecipadas, não reativas.</p>
+      </div>
+      <div class="card">
+        <h3>Deteção de Risco de Churn</h3>
+        <p>Análise de padrões de utilização da plataforma, frequência de comunicação e NPS para detetar sinais precoces de desengagement — e agir antes que o cliente saia.</p>
+      </div>
+      <div class="card">
+        <h3>Comunicação Personalizada com IA</h3>
+        <p>O João Silva recebe uma mensagem direta com euros poupados. O Ricardo Azevedo recebe análise sofisticada com benchmarks setoriais. Mesma informação, linguagem diferente.</p>
+      </div>
     </div>
   </div>
 
@@ -1046,14 +339,7 @@
     <h3 style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:24px;">Priorização das Oportunidades</h3>
     <div class="table-wrap">
       <table>
-        <thead>
-          <tr>
-            <th>Oportunidade</th>
-            <th>Impacto</th>
-            <th>Viabilidade Ano 1</th>
-            <th>Prioridade</th>
-          </tr>
-        </thead>
+        <thead><tr><th>Oportunidade</th><th>Impacto</th><th>Viabilidade Ano 1</th><th>Prioridade</th></tr></thead>
         <tbody>
           <tr><td>Simulador PHEV/BEV com IA</td><td>Alto</td><td>Alta</td><td><span class="priority-badge badge-high">Imediata</span></td></tr>
           <tr><td>Chatbot de pré-qualificação</td><td>Médio</td><td>Alta</td><td><span class="priority-badge badge-high">Ano 1</span></td></tr>
@@ -1074,16 +360,12 @@
     <span class="section-num">PONTO II</span>
     <h2 class="section-title">Market & User Research<br><em>Personas & Oportunidades</em></h2>
   </div>
-
   <div class="prompt-box reveal">
     <div class="prompt-label">↳ Prompt utilizado</div>
     <div class="prompt-text">"És um especialista em market research e user research para serviços B2B em Portugal. A FleetWise é uma startup de gestão de frotas para PMEs, independente de locadoras, focada em otimização fiscal e redução de TCO. Com base nos três perfis seguintes, desenvolve personas detalhadas incluindo: contexto profissional, dores principais, comportamento de decisão, barreiras à compra e o que cada um valoriza numa solução de gestão de frotas."</div>
   </div>
-
   <h3 class="reveal" style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:28px;font-size:1.1rem;color:var(--grey-light);text-transform:uppercase;letter-spacing:0.08em;">Personas</h3>
-
   <div class="persona-grid reveal">
-    <!-- JOÃO -->
     <div class="persona-card">
       <div class="persona-header">
         <div class="persona-avatar">JS</div>
@@ -1104,8 +386,6 @@
         <div class="persona-quote">"Comprei barato, poupei no início. Mas agora até parece que estou a pagar o carro duas vezes."</div>
       </div>
     </div>
-
-    <!-- CARLA -->
     <div class="persona-card">
       <div class="persona-header">
         <div class="persona-avatar">CM</div>
@@ -1126,13 +406,11 @@
         <div class="persona-quote">"Não quero gerir carros. Quero que os carros não sejam um problema para quem quero recrutar."</div>
       </div>
     </div>
-
-    <!-- RICARDO -->
     <div class="persona-card">
       <div class="persona-header">
         <div class="persona-avatar">RA</div>
         <div class="persona-name">Ricardo Azevedo</div>
-        <div class="persona-role">58 anos · Sócio-gerente de escritório de advogados · 5 viaturas premium</div>
+        <div class="persona-role">58 anos · Sócio-gerente · 5 viaturas premium</div>
       </div>
       <div class="persona-body">
         <span class="persona-tag">SEGMENTO 1 — FROTA PREMIUM</span>
@@ -1149,16 +427,11 @@
       </div>
     </div>
   </div>
-
   <div class="divider"></div>
-
   <h3 class="reveal" style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:8px;font-size:1.1rem;color:var(--grey-light);text-transform:uppercase;letter-spacing:0.08em;">Desk Research — Contexto de Mercado</h3>
   <p class="reveal" style="color:var(--grey-light);max-width:760px;margin-bottom:40px;font-size:0.9rem;line-height:1.7;">Portugal tem cerca de 420.000 PMEs activas, das quais 15 a 20% operam com pelo menos uma viatura afecta à actividade. O segmento de 3 a 30 viaturas representa a maior fatia em número de empresas mas a menor em sofisticação de gestão. A maioria não tem política de frota definida, não monitoriza TCO e desconhece o impacto real da Tributação Autónoma (art.º 88.º CIRC).</p>
-
   <div class="divider"></div>
-
   <h3 class="reveal" style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:28px;font-size:1.1rem;color:var(--grey-light);text-transform:uppercase;letter-spacing:0.08em;">As 3 Oportunidades Identificadas</h3>
-
   <div class="opp-grid reveal">
     <div class="opp-card">
       <div class="opp-letter">A</div>
@@ -1176,18 +449,10 @@
       <p>A 6 meses do fim do contrato, a FleetWise ativa automaticamente uma análise comparativa: renovar nas mesmas condições vs. renegociar vs. mudar de fornecedor — com impacto financeiro quantificado. As locadoras contam com a inércia do cliente. A FleetWise interrompe-a com dados.</p>
     </div>
   </div>
-
   <div class="reveal">
     <div class="table-wrap">
       <table>
-        <thead>
-          <tr>
-            <th>Critério</th>
-            <th>A — Alerta Fiscal</th>
-            <th>B — Mix Personalizado</th>
-            <th>C — Trigger Renovação</th>
-          </tr>
-        </thead>
+        <thead><tr><th>Critério</th><th>A — Alerta Fiscal</th><th>B — Mix Personalizado</th><th>C — Trigger Renovação</th></tr></thead>
         <tbody>
           <tr><td>Relevância para o João</td><td>Alta</td><td>Média</td><td>Alta</td></tr>
           <tr><td>Relevância para a Carla</td><td>Média</td><td>Alta</td><td>Alta</td></tr>
@@ -1211,32 +476,24 @@
     <span class="section-num">PONTO III</span>
     <h2 class="section-title">Campanha Táctica<br><em>"Sempre do Teu Lado"</em></h2>
   </div>
-
   <div class="prompt-box reveal">
     <div class="prompt-label">↳ Prompt utilizado</div>
     <div class="prompt-text">"És um diretor criativo de uma agência de publicidade B2B. A FleetWise é uma consultora independente de gestão de frotas para PMEs portuguesas. A campanha centra-se no momento de renovação de contrato de renting — quando a locadora quer renovar e o cliente não tem informação suficiente para negociar. O target principal é o sócio-gerente de PME português, 40-58 anos. Desenvolve: uma assinatura de campanha, um insight humano central, e o conceito criativo que os suporta."</div>
   </div>
-
   <div class="campanha-hero reveal">
     <div style="font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--green);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:20px;">Assinatura da Campanha</div>
-    <div class="campanha-assinatura">
-      "Quando o contrato acaba,<br>começa a negociação.<br>Tens alguém do teu lado?"
-    </div>
+    <div class="campanha-assinatura">"Quando o contrato acaba,<br>começa a negociação.<br>Tens alguém do teu lado?"</div>
     <div style="width:60px;height:2px;background:var(--green);margin:28px auto;"></div>
     <div class="campanha-tagline">FleetWise. Sempre do teu lado.</div>
   </div>
-
   <div class="insight-box reveal">
     <div class="insight-label">↳ Insight Humano</div>
     <div class="insight-text">"Toda a gente sabe que devia negociar melhor. Mas sem dados, negociar é só pedir — e ninguém quer parecer amador."</div>
     <div class="insight-sub">O João Silva, a Carla Mendes e o Ricardo Azevedo têm em comum uma coisa: todos suspeitam que estão a pagar mais do que deveriam. Mas nenhum age. Não é inércia nem ignorância — é racionalidade defensiva. Entrar numa negociação sem informação é expor-se, e para um empresário, um diretor de RH ou um advogado, parecer desinformado é um custo profissional que não estão dispostos a pagar. Por isso renovam. A FleetWise não vende gestão de frotas. <strong style="color:var(--green)">Vende o direito de entrar na sala de negociação com dados.</strong></div>
   </div>
-
   <div class="divider"></div>
-
   <h3 class="reveal" style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:8px;">Plano de Social Media — LinkedIn</h3>
   <p class="reveal" style="color:var(--grey);font-size:0.85rem;margin-bottom:32px;">5 posts para LinkedIn · estratégia educativa com urgência · sem tom promocional</p>
-
   <div class="posts-grid reveal">
     <div class="post-card">
       <div class="post-num">POST 01 / SEMANA 1</div>
@@ -1274,18 +531,14 @@
       <div class="post-obj">Objetivo: Conversão direta. O success fee está explicitado como eliminador de risco — o principal obstáculo das personas.</div>
     </div>
   </div>
-
   <div class="divider"></div>
-
   <h3 class="reveal" style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:8px;">Execução com IA — Spot Publicitário</h3>
   <p class="reveal" style="color:var(--grey);font-size:0.85rem;margin-bottom:24px;">Ferramentas: ElevenLabs (narração PT) · Runway ML (geração de vídeo) · CapCut (edição e legendas)</p>
-
   <div class="video-slot reveal">
     <div class="video-icon">▶</div>
     <h3>"Do Lado Certo" — Spot 60 segundos</h3>
     <p>Slot reservado para embed do spot publicitário gerado com IA.<br>Ferramentas: Runway ML · ElevenLabs · CapCut · Script gerado com Claude</p>
   </div>
-
   <div class="prompt-box reveal" style="margin-top:32px;margin-bottom:0;">
     <div class="prompt-label">↳ Prompt utilizado para o script do spot</div>
     <div class="prompt-text">"Escreve um script de 60 segundos para um spot publicitário da FleetWise. O spot mostra o momento exato em que uma PME recebe a proposta de renovação da locadora — e não sabe se é boa ou má. O tom é próximo, sem dramatismo, realista. Termina com a proposta de valor da FleetWise: 'sempre do teu lado'. Deve funcionar sem som — com legendas — e com som."</div>
@@ -1298,12 +551,10 @@
     <span class="section-num">PONTO IV</span>
     <h2 class="section-title">Fluxo de<br><em>Automação</em></h2>
   </div>
-
   <div class="prompt-box reveal">
     <div class="prompt-label">↳ Prompt utilizado</div>
     <div class="prompt-text">"És um especialista em automação de processos de marketing e vendas B2B. A FleetWise é uma consultora de gestão de frotas para PMEs. O cliente tipo é um sócio-gerente ou diretor que não pesquisa ativamente soluções de frotas. Desenvolve um fluxo de automação completo desde o primeiro contacto até à conversão em cliente pagante, incluindo triggers, ações automáticas, pontos de decisão e ferramentas sugeridas."</div>
   </div>
-
   <div class="fluxo-grid reveal">
     <div class="fluxo-card">
       <div class="fluxo-header">
@@ -1311,105 +562,40 @@
         <span class="fluxo-badge">LinkedIn / Site</span>
       </div>
       <div class="fluxo-body">
-        <div class="fluxo-step">
-          <div class="step-num">1</div>
-          <div class="step-content">
-            <h4>Trigger — Interação Digital</h4>
-            <p>Lead comenta "FROTA" no LinkedIn ou preenche formulário no site. HubSpot regista nome, empresa, NIF, nº viaturas, data estimada fim de contrato.</p>
-          </div>
-        </div>
+        <div class="fluxo-step"><div class="step-num">1</div><div class="step-content"><h4>Trigger — Interação Digital</h4><p>Lead comenta "FROTA" no LinkedIn ou preenche formulário no site. HubSpot regista nome, empresa, NIF, nº viaturas, data estimada fim de contrato.</p></div></div>
         <div class="step-connector"></div>
-        <div class="fluxo-step">
-          <div class="step-num">2</div>
-          <div class="step-content">
-            <h4>Qualificação Automática</h4>
-            <p>Sistema classifica: <strong style="color:var(--green)">lead quente</strong> (renting ativo, contrato &lt;12 meses) vs. <strong style="color:var(--grey)">lead frio</strong> (viaturas próprias, perfil João). Cada ramo tem sequência dedicada.</p>
-          </div>
-        </div>
+        <div class="fluxo-step"><div class="step-num">2</div><div class="step-content"><h4>Qualificação Automática</h4><p>Sistema classifica: <strong style="color:var(--green)">lead quente</strong> (renting ativo, contrato &lt;12 meses) vs. <strong style="color:var(--grey)">lead frio</strong> (viaturas próprias, perfil João). Cada ramo tem sequência dedicada.</p></div></div>
         <div class="step-connector"></div>
-        <div class="fluxo-step">
-          <div class="step-num">3</div>
-          <div class="step-content">
-            <h4>Ativação em &lt;2h</h4>
-            <p>Email automático personalizado com 3 horários via Calendly. Sem resposta em 48h: follow-up por SMS ou LinkedIn DM.</p>
-          </div>
-        </div>
+        <div class="fluxo-step"><div class="step-num">3</div><div class="step-content"><h4>Ativação em &lt;2h</h4><p>Email automático personalizado com 3 horários via Calendly. Sem resposta em 48h: follow-up por SMS ou LinkedIn DM.</p></div></div>
         <div class="step-connector"></div>
-        <div class="fluxo-step">
-          <div class="step-num">4</div>
-          <div class="step-content">
-            <h4>Briefing Pré-Reunião com IA</h4>
-            <p>24h antes: Claude API gera briefing com pesquisa pública da empresa, estimativa de frota, benchmarks setoriais e 3 perguntas-chave a explorar.</p>
-          </div>
-        </div>
+        <div class="fluxo-step"><div class="step-num">4</div><div class="step-content"><h4>Briefing Pré-Reunião com IA</h4><p>24h antes: Claude API gera briefing com pesquisa pública da empresa, estimativa de frota, benchmarks setoriais e 3 perguntas-chave a explorar.</p></div></div>
         <div class="step-connector"></div>
-        <div class="fluxo-step">
-          <div class="step-num">5</div>
-          <div class="step-content">
-            <h4>Proposta e Conversão</h4>
-            <p>IA gera rascunho de proposta em &lt;1h. Enviada via DocSend com tracking de leitura. Onboarding automatizado após assinatura com alertas programados.</p>
-          </div>
-        </div>
+        <div class="fluxo-step"><div class="step-num">5</div><div class="step-content"><h4>Proposta e Conversão</h4><p>IA gera rascunho de proposta em &lt;1h. Enviada via DocSend com tracking de leitura. Onboarding automatizado após assinatura com alertas programados.</p></div></div>
       </div>
     </div>
-
     <div class="fluxo-card">
       <div class="fluxo-header">
         <h3>Fluxo B — Entrada por Referência</h3>
         <span class="fluxo-badge">Contabilista / Rede</span>
       </div>
       <div class="fluxo-body">
-        <div class="fluxo-step">
-          <div class="step-num">1</div>
-          <div class="step-content">
-            <h4>Trigger — Referência Direta</h4>
-            <p>Contabilista menciona FleetWise ao cliente ou cliente chega com indicação direta. A confiança já está transferida — o ciclo é mais curto.</p>
-          </div>
-        </div>
+        <div class="fluxo-step"><div class="step-num">1</div><div class="step-content"><h4>Trigger — Referência Direta</h4><p>Contabilista menciona FleetWise ao cliente ou cliente chega com indicação direta. A confiança já está transferida — o ciclo é mais curto.</p></div></div>
         <div class="step-connector"></div>
-        <div class="fluxo-step">
-          <div class="step-num">2</div>
-          <div class="step-content">
-            <h4>Resposta Humana em &lt;2h</h4>
-            <p>Sem automação nesta fase — este cliente espera atenção pessoal. Reunião agendada diretamente, sem sequência de nurturing.</p>
-          </div>
-        </div>
+        <div class="fluxo-step"><div class="step-num">2</div><div class="step-content"><h4>Resposta Humana em &lt;2h</h4><p>Sem automação nesta fase — este cliente espera atenção pessoal. Reunião agendada diretamente, sem sequência de nurturing.</p></div></div>
         <div class="step-connector"></div>
-        <div class="fluxo-step">
-          <div class="step-num">3</div>
-          <div class="step-content">
-            <h4>Briefing Pré-Reunião com IA</h4>
-            <p>Idêntico ao Fluxo A — crítico para o Ricardo Azevedo, que percebe imediatamente se o interlocutor fez o trabalho de casa.</p>
-          </div>
-        </div>
+        <div class="fluxo-step"><div class="step-num">3</div><div class="step-content"><h4>Briefing Pré-Reunião com IA</h4><p>Idêntico ao Fluxo A — crítico para o Ricardo Azevedo, que percebe imediatamente se o interlocutor fez o trabalho de casa.</p></div></div>
         <div class="step-connector"></div>
-        <div class="fluxo-step">
-          <div class="step-num">4</div>
-          <div class="step-content">
-            <h4>Ciclo Rápido — 5 a 10 dias</h4>
-            <p>Reunião → Proposta → Conversão sem intermediários. Fecho típico em metade do tempo do Fluxo A.</p>
-          </div>
-        </div>
+        <div class="fluxo-step"><div class="step-num">4</div><div class="step-content"><h4>Ciclo Rápido — 5 a 10 dias</h4><p>Reunião → Proposta → Conversão sem intermediários. Fecho típico em metade do tempo do Fluxo A.</p></div></div>
         <div class="step-connector"></div>
-        <div class="fluxo-step">
-          <div class="step-num">5</div>
-          <div class="step-content">
-            <h4>Agradecimento ao Parceiro</h4>
-            <p>Email personalizado ao contabilista que referenciou + eventual partilha de fee de referência. Incentiva a próxima referência.</p>
-          </div>
-        </div>
+        <div class="fluxo-step"><div class="step-num">5</div><div class="step-content"><h4>Agradecimento ao Parceiro</h4><p>Email personalizado ao contabilista que referenciou + eventual partilha de fee de referência. Incentiva a próxima referência.</p></div></div>
       </div>
     </div>
   </div>
-
   <div class="divider"></div>
-
   <h3 class="reveal" style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:24px;">Stack Tecnológico</h3>
   <div class="reveal table-wrap">
     <table>
-      <thead>
-        <tr><th>Ferramenta</th><th>Função</th><th>Custo</th></tr>
-      </thead>
+      <thead><tr><th>Ferramenta</th><th>Função</th><th>Custo</th></tr></thead>
       <tbody>
         <tr><td>HubSpot Free</td><td>CRM + email sequences + funil</td><td>0 €</td></tr>
         <tr><td>Calendly</td><td>Agendamento automático de reuniões</td><td>0 €</td></tr>
@@ -1430,14 +616,11 @@
     <span class="section-num">PONTO V</span>
     <h2 class="section-title">Métricas por<br><em>Fase do Funil</em></h2>
   </div>
-
   <div class="prompt-box reveal">
     <div class="prompt-label">↳ Prompt utilizado</div>
     <div class="prompt-text">"És um especialista em marketing e analytics B2B. A FleetWise é uma consultora de gestão de frotas para PMEs portuguesas. O modelo de aquisição combina presença no LinkedIn, site com simulador e lead magnet, e referências de contabilistas. Identifica as principais métricas aplicáveis a cada fase do funil — ToFu, MoFu e BoFu — justificando a relevância de cada uma para este modelo de negócio específico."</div>
   </div>
-
   <div class="funil-grid reveal">
-    <!-- TOFU -->
     <div class="funil-col">
       <div class="funil-header">
         <div class="funil-label">ToFu</div>
@@ -1445,37 +628,14 @@
         <div class="funil-obj">Estou a chegar às pessoas certas?</div>
       </div>
       <div class="funil-body">
-        <div class="metric-item">
-          <div class="metric-name">Alcance Orgânico LinkedIn</div>
-          <div class="metric-desc">Impressões por post por período. Valida se o conteúdo chega ao target sem paid media.</div>
-          <div class="metric-bench">Target Ano 1: 1.500–3.000 imp./post</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-name">Taxa de Engagement</div>
-          <div class="metric-desc">(Likes + comentários + partilhas) / impressões. Benchmark B2B: acima de 1,5%.</div>
-          <div class="metric-bench">Target: &gt; 1,5%</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-name">Comentários "FROTA"</div>
-          <div class="metric-desc">Respostas diretas ao lead magnet. Cada comentário é um lead qualificado imediato.</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-name">Tráfego Orgânico ao Site</div>
-          <div class="metric-desc">Visitas mensais ao fleetwisesolutions.pt. Efeito combinado de LinkedIn + SEO + referências.</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-name">Utilização do Simulador</div>
-          <div class="metric-desc">Nº de simulações PHEV/BEV realizadas / visitas ao site. Se não é usado, há problema de UX.</div>
-          <div class="metric-bench">Target: &gt; 30 simulações/mês (T1)</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-name">Referências de Contabilistas</div>
-          <div class="metric-desc">Contactos que chegam via parceiro. Valida se a rede de parcerias está ativa.</div>
-        </div>
+        <div class="metric-item"><div class="metric-name">Alcance Orgânico LinkedIn</div><div class="metric-desc">Impressões por post por período. Valida se o conteúdo chega ao target sem paid media.</div><div class="metric-bench">Target Ano 1: 1.500–3.000 imp./post</div></div>
+        <div class="metric-item"><div class="metric-name">Taxa de Engagement</div><div class="metric-desc">(Likes + comentários + partilhas) / impressões. Benchmark B2B: acima de 1,5%.</div><div class="metric-bench">Target: &gt; 1,5%</div></div>
+        <div class="metric-item"><div class="metric-name">Comentários "FROTA"</div><div class="metric-desc">Respostas diretas ao lead magnet. Cada comentário é um lead qualificado imediato.</div></div>
+        <div class="metric-item"><div class="metric-name">Tráfego Orgânico ao Site</div><div class="metric-desc">Visitas mensais ao fleetwisesolutions.pt. Efeito combinado de LinkedIn + SEO + referências.</div></div>
+        <div class="metric-item"><div class="metric-name">Utilização do Simulador</div><div class="metric-desc">Nº de simulações PHEV/BEV realizadas / visitas ao site. Se não é usado, há problema de UX.</div><div class="metric-bench">Target: &gt; 30 simulações/mês (T1)</div></div>
+        <div class="metric-item"><div class="metric-name">Referências de Contabilistas</div><div class="metric-desc">Contactos que chegam via parceiro. Valida se a rede de parcerias está ativa.</div></div>
       </div>
     </div>
-
-    <!-- MOFU -->
     <div class="funil-col">
       <div class="funil-header">
         <div class="funil-label">MoFu</div>
@@ -1483,38 +643,14 @@
         <div class="funil-obj">Os leads estão a qualificar?</div>
       </div>
       <div class="funil-body">
-        <div class="metric-item">
-          <div class="metric-name">Taxa Formulário → Lead Qualificado</div>
-          <div class="metric-desc">% de formulários que passam a lead quente. Mede a qualidade do tráfego ToFu.</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-name">Taxa de Abertura de Emails</div>
-          <div class="metric-desc">Benchmark B2B Portugal: 20–25%. Abaixo disso o assunto ou remetente não funcionam.</div>
-          <div class="metric-bench">Target: &gt; 25%</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-name">Taxa de Agendamento de Reunião</div>
-          <div class="metric-desc">Leads qualificados que agendam via Calendly. Abaixo de 20% indica fricção no processo.</div>
-          <div class="metric-bench">Target: &gt; 20%</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-name">Tempo Médio Lead → Reunião</div>
-          <div class="metric-desc">Dias entre primeiro contacto e reunião agendada.</div>
-          <div class="metric-bench">Target: &lt; 7 dias (Fluxo A) / &lt; 3 dias (Fluxo B)</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-name">Lead Score Médio</div>
-          <div class="metric-desc">Pontuação composta por comportamento (emails abertos, páginas visitadas, simulador usado). Prioriza follow-up humano.</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-name">Taxa de Resposta ao Follow-up</div>
-          <div class="metric-desc">% de leads frios que respondem ao follow-up de 48h. Abaixo de 10% o timing precisa de ajuste.</div>
-          <div class="metric-bench">Target: &gt; 10%</div>
-        </div>
+        <div class="metric-item"><div class="metric-name">Taxa Formulário → Lead Qualificado</div><div class="metric-desc">% de formulários que passam a lead quente. Mede a qualidade do tráfego ToFu.</div></div>
+        <div class="metric-item"><div class="metric-name">Taxa de Abertura de Emails</div><div class="metric-desc">Benchmark B2B Portugal: 20–25%. Abaixo disso o assunto ou remetente não funcionam.</div><div class="metric-bench">Target: &gt; 25%</div></div>
+        <div class="metric-item"><div class="metric-name">Taxa de Agendamento de Reunião</div><div class="metric-desc">Leads qualificados que agendam via Calendly. Abaixo de 20% indica fricção no processo.</div><div class="metric-bench">Target: &gt; 20%</div></div>
+        <div class="metric-item"><div class="metric-name">Tempo Médio Lead → Reunião</div><div class="metric-desc">Dias entre primeiro contacto e reunião agendada.</div><div class="metric-bench">Target: &lt; 7 dias (Fluxo A) / &lt; 3 dias (Fluxo B)</div></div>
+        <div class="metric-item"><div class="metric-name">Lead Score Médio</div><div class="metric-desc">Pontuação composta por comportamento (emails abertos, páginas visitadas, simulador usado). Prioriza follow-up humano.</div></div>
+        <div class="metric-item"><div class="metric-name">Taxa de Resposta ao Follow-up</div><div class="metric-desc">% de leads frios que respondem ao follow-up de 48h. Abaixo de 10% o timing precisa de ajuste.</div><div class="metric-bench">Target: &gt; 10%</div></div>
       </div>
     </div>
-
-    <!-- BOFU -->
     <div class="funil-col">
       <div class="funil-header">
         <div class="funil-label">BoFu</div>
@@ -1522,57 +658,21 @@
         <div class="funil-obj">Estou a converter e a reter?</div>
       </div>
       <div class="funil-body">
-        <div class="metric-item">
-          <div class="metric-name">Taxa Proposta → Cliente</div>
-          <div class="metric-desc">% de propostas aceites. Benchmark B2B consultoria: 30–50%.</div>
-          <div class="metric-bench">Target: &gt; 35%</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-name">CAC — Custo de Aquisição</div>
-          <div class="metric-desc">Custo total marketing e vendas / nº clientes. Modelo founder-led + LinkedIn orgânico mantém CAC baixo.</div>
-          <div class="metric-bench">Target Ano 1: &lt; 200 €</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-name">Poupança Média por Cliente</div>
-          <div class="metric-desc">€ de TCO economizado no primeiro ano. Principal argumento comercial para referências.</div>
-          <div class="metric-bench">Target: &gt; 6% do TCO</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-name">Taxa Success Fee → Retainer</div>
-          <div class="metric-desc">O indicador mais estratégico. Mede se a FleetWise resolveu o job emocional do cliente.</div>
-          <div class="metric-bench">Target Ano 1: &gt; 40%</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-name">NPS — Net Promoter Score</div>
-          <div class="metric-desc">Melhor preditor de crescimento orgânico. Um NPS &gt; 40 significa que os clientes recomendam — o canal mais barato.</div>
-          <div class="metric-bench">Target Ano 1: &gt; 40</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-name">Receita de Upselling</div>
-          <div class="metric-desc">Carregamento, seguros, módulo ESG. Cada euro de upselling tem CAC zero.</div>
-        </div>
+        <div class="metric-item"><div class="metric-name">Taxa Proposta → Cliente</div><div class="metric-desc">% de propostas aceites. Benchmark B2B consultoria: 30–50%.</div><div class="metric-bench">Target: &gt; 35%</div></div>
+        <div class="metric-item"><div class="metric-name">CAC — Custo de Aquisição</div><div class="metric-desc">Custo total marketing e vendas / nº clientes. Modelo founder-led + LinkedIn orgânico mantém CAC baixo.</div><div class="metric-bench">Target Ano 1: &lt; 200 €</div></div>
+        <div class="metric-item"><div class="metric-name">Poupança Média por Cliente</div><div class="metric-desc">€ de TCO economizado no primeiro ano. Principal argumento comercial para referências.</div><div class="metric-bench">Target: &gt; 6% do TCO</div></div>
+        <div class="metric-item"><div class="metric-name">Taxa Success Fee → Retainer</div><div class="metric-desc">O indicador mais estratégico. Mede se a FleetWise resolveu o job emocional do cliente.</div><div class="metric-bench">Target Ano 1: &gt; 40%</div></div>
+        <div class="metric-item"><div class="metric-name">NPS — Net Promoter Score</div><div class="metric-desc">Melhor preditor de crescimento orgânico. Um NPS &gt; 40 significa que os clientes recomendam.</div><div class="metric-bench">Target Ano 1: &gt; 40</div></div>
+        <div class="metric-item"><div class="metric-name">Receita de Upselling</div><div class="metric-desc">Carregamento, seguros, módulo ESG. Cada euro de upselling tem CAC zero.</div></div>
       </div>
     </div>
   </div>
-
   <div class="insight-box reveal" style="margin-top:40px;">
     <div class="insight-label">↳ As 3 Métricas que Não Podem Falhar no Ano 1</div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:16px;">
-      <div>
-        <div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--green);margin-bottom:6px;">01</div>
-        <div style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:6px;">NPS &gt; 40</div>
-        <div style="font-size:0.82rem;color:var(--grey-light);">Se está abaixo de 40, o produto tem um problema. Tudo o resto é secundário.</div>
-      </div>
-      <div>
-        <div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--green);margin-bottom:6px;">02</div>
-        <div style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:6px;">Success Fee → Retainer &gt; 40%</div>
-        <div style="font-size:0.82rem;color:var(--grey-light);">O sinal mais claro de que o modelo de negócio está a funcionar.</div>
-      </div>
-      <div>
-        <div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--green);margin-bottom:6px;">03</div>
-        <div style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:6px;">Referências Ativas de Contabilistas</div>
-        <div style="font-size:0.82rem;color:var(--grey-light);">Canal com menor CAC e maior qualidade de lead. Se não cresce, a estratégia de parcerias precisa revisão urgente.</div>
-      </div>
+      <div><div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--green);margin-bottom:6px;">01</div><div style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:6px;">NPS &gt; 40</div><div style="font-size:0.82rem;color:var(--grey-light);">Se está abaixo de 40, o produto tem um problema. Tudo o resto é secundário.</div></div>
+      <div><div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--green);margin-bottom:6px;">02</div><div style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:6px;">Success Fee → Retainer &gt; 40%</div><div style="font-size:0.82rem;color:var(--grey-light);">O sinal mais claro de que o modelo de negócio está a funcionar.</div></div>
+      <div><div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--green);margin-bottom:6px;">03</div><div style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:6px;">Referências Ativas de Contabilistas</div><div style="font-size:0.82rem;color:var(--grey-light);">Canal com menor CAC e maior qualidade de lead. Se não cresce, a estratégia de parcerias precisa revisão urgente.</div></div>
     </div>
   </div>
 </section>
@@ -1583,102 +683,42 @@
     <span class="section-num">PONTO VI</span>
     <h2 class="section-title">Proposta de<br><em>Dashboard</em></h2>
   </div>
-
   <div class="prompt-box reveal">
     <div class="prompt-label">↳ Prompt utilizado</div>
     <div class="prompt-text">"És um especialista em business intelligence e analytics para empresas de serviços B2B em fase de arranque. A FleetWise é uma consultora de gestão de frotas para PMEs portuguesas, com aquisição via LinkedIn orgânico, site com simulador e referências de contabilistas. Propõe as combinações de dados mais relevantes para um dashboard de gestão do negócio, identificando as visualizações, as fontes de dados e o que cada combinação permite decidir."</div>
   </div>
-
   <p class="reveal" style="font-size:0.9rem;color:var(--grey-light);max-width:700px;margin-bottom:48px;line-height:1.7;">O dashboard da FleetWise não pode ser um agregador de métricas — tem de ser um instrumento de decisão. Cada visualização responde a uma pergunta concreta. Se não responde a nenhuma pergunta, não pertence ao dashboard.</p>
-
   <div class="dash-grid reveal">
-    <!-- MÓDULO 1 -->
     <div class="dash-module">
-      <div class="dash-module-header">
-        <div class="dash-module-num">MÓDULO 01</div>
-        <div class="dash-module-title">Aquisição</div>
-        <div style="font-size:0.75rem;color:var(--grey);margin-top:4px;">Estou a chegar às pessoas certas?</div>
-      </div>
+      <div class="dash-module-header"><div class="dash-module-num">MÓDULO 01</div><div class="dash-module-title">Aquisição</div><div style="font-size:0.75rem;color:var(--grey);margin-top:4px;">Estou a chegar às pessoas certas?</div></div>
       <div class="dash-module-body">
-        <div class="dash-viz">
-          <div class="dash-viz-title">Origem dos Leads por Canal</div>
-          <div class="dash-viz-source">LinkedIn Analytics + HubSpot + Google Analytics</div>
-          <div class="dash-viz-desc">Nº leads × canal (LinkedIn, site, referência, direto) × mês. Identifica onde concentrar esforço comercial.</div>
-        </div>
-        <div class="dash-viz">
-          <div class="dash-viz-title">Performance do Conteúdo LinkedIn</div>
-          <div class="dash-viz-source">LinkedIn Analytics + HubSpot (UTM)</div>
-          <div class="dash-viz-desc">Alcance × engagement × leads gerados por post × formato. Um post com 500 impressões e 3 leads vale mais que 5.000 impressões e 0 leads.</div>
-        </div>
-        <div class="dash-viz">
-          <div class="dash-viz-title">Utilização do Simulador PHEV/BEV</div>
-          <div class="dash-viz-source">Google Analytics + dados do formulário</div>
-          <div class="dash-viz-desc">Simulações realizadas × taxa de conversão simulação → lead. Se muitos simulam mas poucos convertem, há problema de CTA.</div>
-        </div>
+        <div class="dash-viz"><div class="dash-viz-title">Origem dos Leads por Canal</div><div class="dash-viz-source">LinkedIn Analytics + HubSpot + Google Analytics</div><div class="dash-viz-desc">Nº leads × canal (LinkedIn, site, referência, direto) × mês. Identifica onde concentrar esforço comercial.</div></div>
+        <div class="dash-viz"><div class="dash-viz-title">Performance do Conteúdo LinkedIn</div><div class="dash-viz-source">LinkedIn Analytics + HubSpot (UTM)</div><div class="dash-viz-desc">Alcance × engagement × leads gerados por post × formato. Um post com 500 impressões e 3 leads vale mais que 5.000 impressões e 0 leads.</div></div>
+        <div class="dash-viz"><div class="dash-viz-title">Utilização do Simulador PHEV/BEV</div><div class="dash-viz-source">Google Analytics + dados do formulário</div><div class="dash-viz-desc">Simulações realizadas × taxa de conversão simulação → lead. Se muitos simulam mas poucos convertem, há problema de CTA.</div></div>
       </div>
     </div>
-
-    <!-- MÓDULO 2 -->
     <div class="dash-module">
-      <div class="dash-module-header">
-        <div class="dash-module-num">MÓDULO 02</div>
-        <div class="dash-module-title">Pipeline</div>
-        <div style="font-size:0.75rem;color:var(--grey);margin-top:4px;">Os leads estão a converter?</div>
-      </div>
+      <div class="dash-module-header"><div class="dash-module-num">MÓDULO 02</div><div class="dash-module-title">Pipeline</div><div style="font-size:0.75rem;color:var(--grey);margin-top:4px;">Os leads estão a converter?</div></div>
       <div class="dash-module-body">
-        <div class="dash-viz">
-          <div class="dash-viz-title">Funil de Conversão Completo</div>
-          <div class="dash-viz-source">HubSpot CRM</div>
-          <div class="dash-viz-desc">Volume em cada etapa × canal de origem × mês. Onde está o maior ponto de fuga? Onde o ciclo atrasa?</div>
-        </div>
-        <div class="dash-viz">
-          <div class="dash-viz-title">Tempo Médio por Etapa</div>
-          <div class="dash-viz-source">HubSpot CRM (timestamps automáticos)</div>
-          <div class="dash-viz-desc">Dias entre cada transição vs. target definido. Atraso entre proposta e fecho pode indicar que o interlocutor não é o decisor final.</div>
-        </div>
-        <div class="dash-viz">
-          <div class="dash-viz-title">Taxa de Resposta por Email da Sequência</div>
-          <div class="dash-viz-source">HubSpot Email Analytics</div>
-          <div class="dash-viz-desc">Abertura × clique × resposta × posição na sequência × segmento. Identifica qual email está a falhar.</div>
-        </div>
+        <div class="dash-viz"><div class="dash-viz-title">Funil de Conversão Completo</div><div class="dash-viz-source">HubSpot CRM</div><div class="dash-viz-desc">Volume em cada etapa × canal de origem × mês. Onde está o maior ponto de fuga? Onde o ciclo atrasa?</div></div>
+        <div class="dash-viz"><div class="dash-viz-title">Tempo Médio por Etapa</div><div class="dash-viz-source">HubSpot CRM (timestamps automáticos)</div><div class="dash-viz-desc">Dias entre cada transição vs. target definido. Atraso entre proposta e fecho pode indicar que o interlocutor não é o decisor final.</div></div>
+        <div class="dash-viz"><div class="dash-viz-title">Taxa de Resposta por Email da Sequência</div><div class="dash-viz-source">HubSpot Email Analytics</div><div class="dash-viz-desc">Abertura × clique × resposta × posição na sequência × segmento. Identifica qual email está a falhar.</div></div>
       </div>
     </div>
-
-    <!-- MÓDULO 3 -->
     <div class="dash-module">
-      <div class="dash-module-header">
-        <div class="dash-module-num">MÓDULO 03</div>
-        <div class="dash-module-title">Retenção & Receita</div>
-        <div style="font-size:0.75rem;color:var(--grey);margin-top:4px;">Os clientes estão a ficar e a crescer?</div>
-      </div>
+      <div class="dash-module-header"><div class="dash-module-num">MÓDULO 03</div><div class="dash-module-title">Retenção & Receita</div><div style="font-size:0.75rem;color:var(--grey);margin-top:4px;">Os clientes estão a ficar e a crescer?</div></div>
       <div class="dash-module-body">
-        <div class="dash-viz">
-          <div class="dash-viz-title">Receita Recorrente vs. Não Recorrente</div>
-          <div class="dash-viz-source">HubSpot + Faturação</div>
-          <div class="dash-viz-desc">Retainer vs. success fee vs. upselling × mês. Target Ano 2: retainer &gt; 60% da receita total.</div>
-        </div>
-        <div class="dash-viz">
-          <div class="dash-viz-title">Poupança Gerada vs. Fee Cobrado</div>
-          <div class="dash-viz-source">Plataforma FleetWise (TCO) + HubSpot</div>
-          <div class="dash-viz-desc">Poupança TCO por cliente × fee cobrado × rácio. Identifica se o pricing está calibrado e onde há espaço para rever.</div>
-        </div>
-        <div class="dash-viz">
-          <div class="dash-viz-title">NPS × Churn × Tempo de Relação</div>
-          <div class="dash-viz-source">Typeform NPS + HubSpot</div>
-          <div class="dash-viz-desc">Se a maioria do churn ocorre antes dos 6 meses, o problema está no onboarding — não na relação de longo prazo.</div>
-        </div>
+        <div class="dash-viz"><div class="dash-viz-title">Receita Recorrente vs. Não Recorrente</div><div class="dash-viz-source">HubSpot + Faturação</div><div class="dash-viz-desc">Retainer vs. success fee vs. upselling × mês. Target Ano 2: retainer &gt; 60% da receita total.</div></div>
+        <div class="dash-viz"><div class="dash-viz-title">Poupança Gerada vs. Fee Cobrado</div><div class="dash-viz-source">Plataforma FleetWise (TCO) + HubSpot</div><div class="dash-viz-desc">Poupança TCO por cliente × fee cobrado × rácio. Identifica se o pricing está calibrado e onde há espaço para rever.</div></div>
+        <div class="dash-viz"><div class="dash-viz-title">NPS × Churn × Tempo de Relação</div><div class="dash-viz-source">Typeform NPS + HubSpot</div><div class="dash-viz-desc">Se a maioria do churn ocorre antes dos 6 meses, o problema está no onboarding — não na relação de longo prazo.</div></div>
       </div>
     </div>
   </div>
-
   <div class="divider"></div>
-
   <h3 class="reveal" style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:24px;">Stack de Dados Completo</h3>
   <div class="reveal table-wrap">
     <table>
-      <thead>
-        <tr><th>Fonte de Dados</th><th>O que alimenta</th><th>Custo</th></tr>
-      </thead>
+      <thead><tr><th>Fonte de Dados</th><th>O que alimenta</th><th>Custo</th></tr></thead>
       <tbody>
         <tr><td>LinkedIn Analytics</td><td>Performance de conteúdo, alcance, demografia do público</td><td>0 €</td></tr>
         <tr><td>Google Analytics 4</td><td>Tráfego site, utilização do simulador, origem de visitas</td><td>0 €</td></tr>
@@ -1694,7 +734,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div>
     <div class="footer-logo">Fleet<span>Wise</span></div>
@@ -1708,36 +747,20 @@
 </footer>
 
 <script>
-  // Intersection Observer for reveal animations
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, 100);
-        observer.unobserve(entry.target);
-      }
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('visible'), 100); observer.unobserve(entry.target); }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-
   reveals.forEach(el => observer.observe(el));
-
-  // Active nav link on scroll
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
-
   window.addEventListener('scroll', () => {
     let current = '';
-    sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - 100) current = sec.getAttribute('id');
-    });
-    navLinks.forEach(link => {
-      link.style.color = link.getAttribute('href') === '#' + current ? 'var(--green)' : '';
-      link.style.background = link.getAttribute('href') === '#' + current ? 'var(--green-dim)' : '';
-    });
+    sections.forEach(sec => { if (window.scrollY >= sec.offsetTop - 100) current = sec.getAttribute('id'); });
+    navLinks.forEach(link => { link.style.color = link.getAttribute('href') === '#' + current ? 'var(--green)' : ''; link.style.background = link.getAttribute('href') === '#' + current ? 'var(--green-dim)' : ''; });
   });
 </script>
-
 </body>
 </html>
