@@ -46,13 +46,13 @@
   .section-title em { color: var(--green); font-style: normal; }
 
   /* ── CARD GROUPS ── */
-  .card-group { margin-bottom: 40px; }
-  .card-group:last-child { margin-bottom: 0; }
-  .card-group-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
-  .card-group-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--green-dim); border: 1px solid var(--green); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
-  .card-group-label { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--green); letter-spacing: 0.1em; text-transform: uppercase; }
-  .card-group-count { margin-left: auto; font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--grey); background: var(--navy-mid); border: 1px solid var(--border); border-radius: 20px; padding: 2px 10px; }
-  .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .card-groups-wrapper { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .card-group { display: flex; flex-direction: column; background: var(--navy-mid); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+  .card-group-header { display: flex; flex-direction: column; gap: 4px; padding: 18px 20px; border-bottom: 2px solid var(--green); background: linear-gradient(135deg, var(--green-dim), transparent); }
+  .card-group-icon { font-size: 1.2rem; margin-bottom: 2px; }
+  .card-group-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--green); letter-spacing: 0.1em; text-transform: uppercase; }
+  .card-group-count { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--grey); }
+  .cards-stack { display: flex; flex-direction: column; flex: 1; }
 
   .card { background: var(--navy-mid); border: 1px solid var(--border); border-radius: 12px; padding: 24px; transition: border-color 0.3s, transform 0.3s; }
   .card:hover { border-color: var(--green); transform: translateY(-4px); }
@@ -245,14 +245,15 @@
     <div class="prompt-text">"És um consultor especialista em aplicações de Inteligência Artificial para empresas de serviços B2B. A FleetWise é uma startup portuguesa de gestão de frotas para PMEs, independente de locadoras, com proposta de valor centrada em otimização fiscal, redução de TCO e consultoria imparcial. Opera no segmento de frotas entre 3 e 30 viaturas. Faz um brainstorming estruturado de oportunidades de IA aplicáveis ao modelo de negócio, cobrindo as dimensões: aquisição de clientes, entrega do serviço, operação interna e produto."</div>
   </div>
 
+  <div class="card-groups-wrapper reveal">
   <!-- GRUPO 1 -->
-  <div class="card-group reveal">
+  <div class="card-group">
     <div class="card-group-header">
       <div class="card-group-icon">🎯</div>
       <span class="card-group-label">Aquisição de Clientes</span>
       <span class="card-group-count">3 iniciativas</span>
     </div>
-    <div class="cards-grid">
+    <div class="cards-stack">
       <div class="card">
         <h3>Lead Scoring com Dados Públicos</h3>
         <p>Cruzamento automático de CAE, número de trabalhadores e volume de negócios para identificar PMEs com perfil de frota provável e propensão à ineficiência fiscal — sem prospeção manual.</p>
@@ -269,13 +270,13 @@
   </div>
 
   <!-- GRUPO 2 -->
-  <div class="card-group reveal">
+  <div class="card-group">
     <div class="card-group-header">
       <div class="card-group-icon">⚙️</div>
       <span class="card-group-label">Serviço</span>
       <span class="card-group-count">3 iniciativas</span>
     </div>
-    <div class="cards-grid">
+    <div class="cards-stack">
       <div class="card">
         <h3>Auditoria TCO Automatizada</h3>
         <p>OCR e NLP para leitura automática de faturas, contratos de renting e registos de manutenção — gerando rascunho de Radiografia TCO em horas em vez de dias.</p>
@@ -292,13 +293,13 @@
   </div>
 
   <!-- GRUPO 3 -->
-  <div class="card-group reveal">
+  <div class="card-group">
     <div class="card-group-header">
       <div class="card-group-icon">🔧</div>
       <span class="card-group-label">Operação Interna</span>
       <span class="card-group-count">2 iniciativas</span>
     </div>
-    <div class="cards-grid">
+    <div class="cards-stack">
       <div class="card">
         <h3>Geração Automática de Relatórios</h3>
         <p>LLMs para automatizar produção de relatórios TCO personalizados, propostas comerciais e comunicações de renovação — mantendo consistência de qualidade sem esforço manual.</p>
@@ -311,13 +312,13 @@
   </div>
 
   <!-- GRUPO 4 -->
-  <div class="card-group reveal">
+  <div class="card-group">
     <div class="card-group-header">
       <div class="card-group-icon">📊</div>
       <span class="card-group-label">Produto</span>
       <span class="card-group-count">3 iniciativas</span>
     </div>
-    <div class="cards-grid">
+    <div class="cards-stack">
       <div class="card">
         <h3>Dashboard Preditivo de TCO</h3>
         <p>Em vez de mostrar o que aconteceu, a plataforma projeta o TCO dos próximos 12 meses com base em padrões de utilização e cenários de mercado — decisões antecipadas, não reativas.</p>
@@ -332,6 +333,7 @@
       </div>
     </div>
   </div>
+  </div><!-- end card-groups-wrapper -->
 
   <div class="divider"></div>
 
