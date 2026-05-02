@@ -288,7 +288,7 @@
   <a href="#hero" class="nav-logo">Fleet<span>Wise</span></a>
   <ul class="nav-links" id="nav-links">
     <li><a href="#ponto1" onclick="closeMenu()">I. IA</a></li>
-    <li><a href="#ponto2" onclick="closeMenu()">II. Research</a></li>
+    <li><a href="#ponto2" onclick="closeMenu()">II. Market & User Research</a></li>
     <li><a href="#ponto3" onclick="closeMenu()">III. Campanha</a></li>
     <li><a href="#ponto4" onclick="closeMenu()">IV. Automação</a></li>
     <li><a href="#ponto5" onclick="closeMenu()">V. Métricas</a></li>
@@ -988,7 +988,7 @@ END CARD: activar slide final automático com logo FleetWise + "fleetwisesolutio
     <div class="fluxo-card">
       <div class="fluxo-header">
         <h3>Fluxo A — Entrada Digital</h3>
-        <span class="fluxo-badge">LinkedIn / Site</span>
+        <span class="fluxo-badge">Redes Sociais / Site</span>
       </div>
       <div class="fluxo-body">
         <div class="fluxo-step"><div class="step-num">1</div><div class="step-content"><h4>Trigger — Interação Digital</h4><p>Lead comenta "FROTA" no LinkedIn ou preenche formulário no site. HubSpot regista nome, empresa, NIF, nº viaturas, data estimada fim de contrato.</p></div></div>
@@ -1132,35 +1132,41 @@ END CARD: activar slide final automático com logo FleetWise + "fleetwisesolutio
     <div class="prompt-label">↳ Prompt utilizado</div>
     <div class="prompt-text">"És um especialista em business intelligence e analytics para empresas de serviços B2B em fase de arranque. A FleetWise é uma consultora de gestão de frotas para PMEs portuguesas, com aquisição via LinkedIn orgânico, site com simulador e referências de contabilistas. Propõe as combinações de dados mais relevantes para um dashboard de gestão do negócio, identificando as visualizações, as fontes de dados e o que cada combinação permite decidir."</div>
   </div>
-  <p class="reveal" style="font-size:0.9rem;color:var(--grey-light);max-width:700px;margin-bottom:48px;line-height:1.7;">O dashboard da FleetWise não pode ser um agregador de métricas — tem de ser um instrumento de decisão. Cada visualização responde a uma pergunta concreta. Se não responde a nenhuma pergunta, não pertence ao dashboard.</p>
+  <!-- DESIGN STATEMENT -->
+  <div class="reveal" style="background:var(--navy);border:1px solid var(--green);border-radius:16px;padding:32px 40px;margin-bottom:48px;">
+    <div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--green);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;">↳ Princípio de Design</div>
+    <div style="font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(1rem,2vw,1.25rem);line-height:1.4;margin-bottom:16px;">O dashboard da FleetWise não pode ser um agregador de métricas — tem de ser um instrumento de decisão.</div>
+    <div style="font-size:0.88rem;color:var(--grey-light);line-height:1.7;">Cada visualização responde a uma pergunta de gestão concreta. Se não responde a nenhuma pergunta accionável, não pertence ao dashboard. A regra de ouro: antes de adicionar um gráfico, identificar a decisão que ele suporta.</div>
+  </div>
   <div class="dash-grid reveal">
     <div class="dash-module">
-      <div class="dash-module-header"><div class="dash-module-num">MÓDULO 01</div><div class="dash-module-title">Aquisição</div><div style="font-size:0.75rem;color:var(--grey);margin-top:4px;">Estou a chegar às pessoas certas?</div></div>
+      <div class="dash-module-header"><div class="dash-module-num">MÓDULO 01</div><div class="dash-module-title">Aquisição</div><div style="font-size:0.75rem;color:var(--grey);margin-top:4px;">Estou a chegar às pessoas certas?</div><div style="font-family:'DM Mono',monospace;font-size:0.6rem;color:var(--green);margin-top:8px;letter-spacing:0.06em;">3 VISUALIZAÇÕES · 3 FONTES</div></div>
       <div class="dash-module-body">
-        <div class="dash-viz"><div class="dash-viz-title">Origem dos Leads por Canal</div><div class="dash-viz-source">LinkedIn Analytics + HubSpot + Google Analytics</div><div class="dash-viz-desc">Nº leads × canal (LinkedIn, site, referência, direto) × mês. Identifica onde concentrar esforço comercial.</div></div>
+        <div class="dash-viz" style="border-left:3px solid var(--green);padding-left:12px;margin-left:-12px;"><div style="font-family:'DM Mono',monospace;font-size:0.56rem;color:var(--green);letter-spacing:0.08em;margin-bottom:4px;">↑ DECISÃO CHAVE</div><div class="dash-viz-title">Origem dos Leads por Canal</div><div class="dash-viz-source">LinkedIn Analytics + HubSpot + Google Analytics</div><div class="dash-viz-desc">Nº leads × canal (LinkedIn, site, referência, direto) × mês. Identifica onde concentrar esforço comercial.</div></div>
         <div class="dash-viz"><div class="dash-viz-title">Performance do Conteúdo LinkedIn</div><div class="dash-viz-source">LinkedIn Analytics + HubSpot (UTM)</div><div class="dash-viz-desc">Alcance × engagement × leads gerados por post × formato. Um post com 500 impressões e 3 leads vale mais que 5.000 impressões e 0 leads.</div></div>
         <div class="dash-viz"><div class="dash-viz-title">Utilização do Simulador PHEV/BEV</div><div class="dash-viz-source">Google Analytics + dados do formulário</div><div class="dash-viz-desc">Simulações realizadas × taxa de conversão simulação → lead. Se muitos simulam mas poucos convertem, há problema de CTA.</div></div>
       </div>
     </div>
     <div class="dash-module">
-      <div class="dash-module-header"><div class="dash-module-num">MÓDULO 02</div><div class="dash-module-title">Pipeline</div><div style="font-size:0.75rem;color:var(--grey);margin-top:4px;">Os leads estão a converter?</div></div>
+      <div class="dash-module-header"><div class="dash-module-num">MÓDULO 02</div><div class="dash-module-title">Pipeline</div><div style="font-size:0.75rem;color:var(--grey);margin-top:4px;">Os leads estão a converter?</div><div style="font-family:'DM Mono',monospace;font-size:0.6rem;color:var(--green);margin-top:8px;letter-spacing:0.06em;">3 VISUALIZAÇÕES · 2 FONTES</div></div>
       <div class="dash-module-body">
-        <div class="dash-viz"><div class="dash-viz-title">Funil de Conversão Completo</div><div class="dash-viz-source">HubSpot CRM</div><div class="dash-viz-desc">Volume em cada etapa × canal de origem × mês. Onde está o maior ponto de fuga? Onde o ciclo atrasa?</div></div>
+        <div class="dash-viz" style="border-left:3px solid var(--green);padding-left:12px;margin-left:-12px;"><div style="font-family:'DM Mono',monospace;font-size:0.56rem;color:var(--green);letter-spacing:0.08em;margin-bottom:4px;">↑ DECISÃO CHAVE</div><div class="dash-viz-title">Funil de Conversão Completo</div><div class="dash-viz-source">HubSpot CRM</div><div class="dash-viz-desc">Volume em cada etapa × canal de origem × mês. Onde está o maior ponto de fuga? Onde o ciclo atrasa?</div></div>
         <div class="dash-viz"><div class="dash-viz-title">Tempo Médio por Etapa</div><div class="dash-viz-source">HubSpot CRM (timestamps automáticos)</div><div class="dash-viz-desc">Dias entre cada transição vs. target definido. Atraso entre proposta e fecho pode indicar que o interlocutor não é o decisor final.</div></div>
         <div class="dash-viz"><div class="dash-viz-title">Taxa de Resposta por Email da Sequência</div><div class="dash-viz-source">HubSpot Email Analytics</div><div class="dash-viz-desc">Abertura × clique × resposta × posição na sequência × segmento. Identifica qual email está a falhar.</div></div>
       </div>
     </div>
     <div class="dash-module">
-      <div class="dash-module-header"><div class="dash-module-num">MÓDULO 03</div><div class="dash-module-title">Retenção & Receita</div><div style="font-size:0.75rem;color:var(--grey);margin-top:4px;">Os clientes estão a ficar e a crescer?</div></div>
+      <div class="dash-module-header"><div class="dash-module-num">MÓDULO 03</div><div class="dash-module-title">Retenção & Receita</div><div style="font-size:0.75rem;color:var(--grey);margin-top:4px;">Os clientes estão a ficar e a crescer?</div><div style="font-family:'DM Mono',monospace;font-size:0.6rem;color:var(--green);margin-top:8px;letter-spacing:0.06em;">3 VISUALIZAÇÕES · 4 FONTES</div></div>
       <div class="dash-module-body">
-        <div class="dash-viz"><div class="dash-viz-title">Receita Recorrente vs. Não Recorrente</div><div class="dash-viz-source">HubSpot + Faturação</div><div class="dash-viz-desc">Retainer vs. success fee vs. upselling × mês. Target Ano 2: retainer &gt; 60% da receita total.</div></div>
+        <div class="dash-viz" style="border-left:3px solid var(--green);padding-left:12px;margin-left:-12px;"><div style="font-family:'DM Mono',monospace;font-size:0.56rem;color:var(--green);letter-spacing:0.08em;margin-bottom:4px;">↑ DECISÃO CHAVE</div><div class="dash-viz-title">Receita Recorrente vs. Não Recorrente</div><div class="dash-viz-source">HubSpot + Faturação</div><div class="dash-viz-desc">Retainer vs. success fee vs. upselling × mês. Target Ano 2: retainer &gt; 60% da receita total.</div></div>
         <div class="dash-viz"><div class="dash-viz-title">Poupança Gerada vs. Fee Cobrado</div><div class="dash-viz-source">Plataforma FleetWise (TCO) + HubSpot</div><div class="dash-viz-desc">Poupança TCO por cliente × fee cobrado × rácio. Identifica se o pricing está calibrado e onde há espaço para rever.</div></div>
         <div class="dash-viz"><div class="dash-viz-title">NPS × Churn × Tempo de Relação</div><div class="dash-viz-source">Typeform NPS + HubSpot</div><div class="dash-viz-desc">Se a maioria do churn ocorre antes dos 6 meses, o problema está no onboarding — não na relação de longo prazo.</div></div>
       </div>
     </div>
   </div>
   <div class="divider"></div>
-  <h3 class="reveal" style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:24px;">Stack de Dados Completo</h3>
+  <h3 class="reveal" style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:8px;">Stack de Dados — Fontes para o Dashboard</h3>
+  <p class="reveal" style="font-size:0.82rem;color:var(--grey);margin-bottom:24px;line-height:1.6;">Distinção importante: estas ferramentas são aqui listadas como <strong style="color:var(--white)">fontes de dados</strong> para o dashboard de análise — não como ferramentas de automação (papel que desempenham no Capítulo IV). A mesma plataforma serve dois propósitos distintos: executar e medir.</p>
   <div class="reveal table-wrap">
     <table>
       <thead><tr><th>Fonte de Dados</th><th>O que alimenta</th><th>Custo</th></tr></thead>
