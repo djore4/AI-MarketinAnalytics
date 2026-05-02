@@ -588,207 +588,376 @@
   <h3 class="reveal" style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:8px;">Plano de Social Media</h3>
   <p class="reveal" style="color:var(--grey);font-size:0.85rem;margin-bottom:32px;">5 posts · LinkedIn e Facebook · estratégia educativa · sem tom promocional</p>
 
-  <div class="reveal" style="display:flex;gap:16px;margin-bottom:40px;flex-wrap:wrap;">
-    <div style="display:flex;align-items:center;gap:8px;background:var(--navy-mid);border:1px solid var(--border);border-radius:8px;padding:8px 16px;">
-      <div style="width:10px;height:10px;border-radius:2px;background:#0A66C2;"></div>
-      <span style="font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--grey-light);">LinkedIn — tom analítico, B2B, dados e argumentos</span>
+  <!-- POSTS INTERACTIVE VIEWER -->
+  <div class="reveal" id="posts-viewer">
+
+    <!-- CONTROLS -->
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:24px;">
+      <!-- Platform toggle -->
+      <div style="display:flex;gap:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;">
+        <button onclick="setNetwork('li')" id="btn-li" style="display:flex;align-items:center;gap:8px;padding:9px 18px;background:#0A66C2;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.68rem;color:#fff;transition:all 0.2s;">
+          <span style="width:8px;height:8px;border-radius:2px;background:#fff;display:inline-block;"></span>LinkedIn
+        </button>
+        <button onclick="setNetwork('fb')" id="btn-fb" style="display:flex;align-items:center;gap:8px;padding:9px 18px;background:var(--navy-mid);border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--grey);transition:all 0.2s;">
+          <span style="width:8px;height:8px;border-radius:2px;background:#1877F2;display:inline-block;"></span>Facebook
+        </button>
+      </div>
+      <!-- Post navigator -->
+      <div style="display:flex;align-items:center;gap:12px;">
+        <button onclick="navPost(-1)" style="width:36px;height:36px;border-radius:50%;background:var(--navy-mid);border:1px solid var(--border);cursor:pointer;color:var(--grey-light);font-size:1rem;display:flex;align-items:center;justify-content:center;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--green)';this.style.color='var(--green)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--grey-light)'">‹</button>
+        <span id="post-counter" style="font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--green);min-width:60px;text-align:center;">POST 1/5</span>
+        <button onclick="navPost(1)" style="width:36px;height:36px;border-radius:50%;background:var(--navy-mid);border:1px solid var(--border);cursor:pointer;color:var(--grey-light);font-size:1rem;display:flex;align-items:center;justify-content:center;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--green)';this.style.color='var(--green)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--grey-light)'">›</button>
+      </div>
     </div>
-    <div style="display:flex;align-items:center;gap:8px;background:var(--navy-mid);border:1px solid var(--border);border-radius:8px;padding:8px 16px;">
-      <div style="width:10px;height:10px;border-radius:2px;background:#1877F2;"></div>
-      <span style="font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--grey-light);">Facebook — tom directo, imagem domina, apelo à dor</span>
-    </div>
+
+    <!-- POST META -->
+    <div id="post-meta" style="display:flex;align-items:center;gap:10px;margin-bottom:20px;flex-wrap:wrap;min-height:28px;"></div>
+
+    <!-- POST CONTENT AREA -->
+    <div id="post-content" style="transition:opacity 0.25s ease;"></div>
+
   </div>
 
-  <!-- POST 1 LINKEDIN -->
-  <div class="reveal" style="margin-bottom:48px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
-      <span style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--green);">POST 01 · SEMANA 1</span>
-      <span style="background:#0A66C2;border-radius:4px;padding:3px 10px;font-size:0.62rem;font-family:'DM Mono',monospace;color:#fff;">LinkedIn</span>
-      <span style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--grey);">Imagem Estática · Awareness + Lead Magnet</span>
-    </div>
-    <div style="max-width:540px;background:#1B1F23;border-radius:12px;overflow:hidden;border:1px solid #333;font-family:'Poppins',sans-serif;">
-      <div style="padding:12px 16px;border-bottom:1px solid #2a2e32;display:flex;align-items:center;gap:10px;">
-        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--green),#007a52);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;color:#fff;flex-shrink:0;">FW</div>
-        <div><div style="font-size:0.82rem;font-weight:600;color:#e8e8e8;">FleetWise Solutions</div><div style="font-size:0.62rem;color:#666;">Agora · 🌐</div></div>
-      </div>
-      <div style="padding:16px;">
-        <div style="font-size:0.82rem;color:#d0d0d0;line-height:1.6;margin-bottom:14px;">
-          <strong style="color:#fff;">Os maiores custos de uma frota são os que nunca aparecem numa fatura.</strong><br><br>
-          83% das empresas renovam o contrato de renting sem renegociar uma única cláusula.<br><br>
-          Não é descuido. É falta de informação no momento certo.<br><br>
-          💬 Comente <strong style="color:var(--green);">"FROTA"</strong> e enviamos uma análise gratuita do seu contrato atual.
-        </div>
-        <div style="background:linear-gradient(135deg,#0D1B2A,#142233);border-radius:8px;padding:20px;border:1px solid #1E3047;margin-bottom:12px;text-align:center;">
-          <div style="font-family:'Poppins',sans-serif;font-weight:800;font-size:2.2rem;color:var(--green);line-height:1;">83%</div>
-          <div style="font-size:0.72rem;color:#8A9BB0;margin:8px 0 10px;">das empresas renovam sem renegociar</div>
-          <div style="width:36px;height:2px;background:var(--green);margin:0 auto 10px;"></div>
-          <div style="font-size:0.68rem;color:#C8D4E0;font-style:italic;">FleetWise. Clareza onde os outros vêem complexidade.</div>
-        </div>
-        <div style="display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid #2a2e32;font-size:0.7rem;color:#888;">
-          <span>👍 ❤️ 💡 47 reações</span><span>23 comentários · 12 partilhas</span>
-        </div>
-      </div>
-      <div style="padding:4px 8px 8px;display:flex;border-top:1px solid #2a2e32;">
-        <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">👍 Gosto</div>
-        <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">💬 Comentar</div>
-        <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">🔁 Partilhar</div>
-        <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">✉️ Enviar</div>
-      </div>
-    </div>
-  </div>
+  <script>
+  (function(){
+    var current = 0;
+    var network = 'li';
 
-  <!-- POST 2 FACEBOOK -->
-  <div class="reveal" style="margin-bottom:48px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
-      <span style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--green);">POST 02 · SEMANA 2</span>
-      <span style="background:#1877F2;border-radius:4px;padding:3px 10px;font-size:0.62rem;font-family:'DM Mono',monospace;color:#fff;">Facebook</span>
-      <span style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--grey);">Imagem Estática · Awareness</span>
-    </div>
-    <div style="max-width:480px;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #ddd;font-family:'Poppins',sans-serif;">
-      <div style="padding:12px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #f0f0f0;">
-        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--green),#007a52);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;color:#fff;flex-shrink:0;">FW</div>
-        <div><div style="font-size:0.82rem;font-weight:600;color:#1c1e21;">FleetWise Solutions</div><div style="font-size:0.65rem;color:#65676b;">Há 2 horas · 🌐</div></div>
-        <div style="margin-left:auto;color:#65676b;font-size:1.1rem;">···</div>
-      </div>
-      <div style="padding:14px 16px;">
-        <div style="font-size:0.83rem;color:#1c1e21;line-height:1.6;margin-bottom:12px;">
-          A sua empresa tem viaturas? Sabia que a maioria das empresas paga mais do que devia — sem saber?<br><br>
-          Os custos que mais pesam numa frota são os que não aparecem nas faturas: tributação mal otimizada, contratos desatualizados, quilómetros excedentes não monitorizados.<br><br>
-          A <strong>FleetWise</strong> analisa a sua frota e identifica onde está a perder dinheiro — sem compromisso.
-        </div>
-        <div style="background:linear-gradient(135deg,#0D1B2A,#1C2E42);border-radius:8px;padding:18px;text-align:center;margin-bottom:12px;">
-          <div style="font-family:'Poppins',sans-serif;font-weight:800;font-size:1.5rem;color:var(--green);margin-bottom:6px;">Análise gratuita</div>
-          <div style="font-size:0.72rem;color:#C8D4E0;margin-bottom:12px;">Resultados em 5 dias úteis</div>
-          <div style="background:var(--green);color:#0D1B2A;font-weight:700;font-size:0.75rem;padding:8px 20px;border-radius:6px;display:inline-block;">Saber mais →</div>
-        </div>
-        <div style="display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid #f0f0f0;font-size:0.72rem;color:#65676b;">
-          <span>👍 ❤️ 😮 34 pessoas</span><span>8 comentários · 5 partilhas</span>
-        </div>
-      </div>
-      <div style="padding:4px 8px 8px;display:flex;border-top:1px solid #f0f0f0;">
-        <div style="flex:1;padding:7px;text-align:center;font-size:0.73rem;color:#65676b;">👍 Gosto</div>
-        <div style="flex:1;padding:7px;text-align:center;font-size:0.73rem;color:#65676b;">💬 Comentar</div>
-        <div style="flex:1;padding:7px;text-align:center;font-size:0.73rem;color:#65676b;">↗️ Partilhar</div>
-      </div>
-    </div>
-  </div>
+    var metas = [
+      {label:'Semana 1',type:'Imagem Estática · Awareness + Lead Magnet', li:true, fb:true},
+      {label:'Semana 2',type:'Carousel · Educativo', li:true, fb:true},
+      {label:'Semana 3',type:'Caso Prático · Prova de Conceito', li:true, fb:true},
+      {label:'Semana 4',type:'Opinião · Posicionamento', li:true, fb:true},
+      {label:'Semana 5',type:'Call-to-Action · Conversão', li:true, fb:true}
+    ];
 
-  <!-- POST 3 LINKEDIN -->
-  <div class="reveal" style="margin-bottom:48px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
-      <span style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--green);">POST 03 · SEMANA 3</span>
-      <span style="background:#0A66C2;border-radius:4px;padding:3px 10px;font-size:0.62rem;font-family:'DM Mono',monospace;color:#fff;">LinkedIn</span>
-      <span style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--grey);">Caso Prático · Prova de Conceito</span>
-    </div>
-    <div style="max-width:540px;background:#1B1F23;border-radius:12px;overflow:hidden;border:1px solid #333;font-family:'Poppins',sans-serif;">
-      <div style="padding:12px 16px;border-bottom:1px solid #2a2e32;display:flex;align-items:center;gap:10px;">
-        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--green),#007a52);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;color:#fff;flex-shrink:0;">FW</div>
-        <div><div style="font-size:0.82rem;font-weight:600;color:#e8e8e8;">FleetWise Solutions</div><div style="font-size:0.62rem;color:#666;">Há 3 dias · 🌐</div></div>
-      </div>
-      <div style="padding:16px;">
-        <div style="font-size:0.82rem;color:#d0d0d0;line-height:1.6;margin-bottom:14px;">
-          <strong style="color:#fff;">Um escritório de advogados em Lisboa poupou 14.400€ em 3 anos.</strong><br><br>
-          5 viaturas premium. Ninguém sabia exactamente quanto pagava em tributação autónoma.<br><br>
-          Identificámos três ineficiências:<br>
-          — 2 viaturas com taxa de 35% que podiam ser PHEV a 10%<br>
-          — Quilometragem contratada desajustada da utilização real<br>
-          — Seguro com cobertura duplicada face à apólice existente<br><br>
-          Resultado: <strong style="color:var(--green);">4.800€ de poupança por ano.</strong> Sem mudar de locadora.
-        </div>
-        <div style="background:#142233;border-radius:8px;padding:14px 16px;margin-bottom:12px;border-left:3px solid var(--green);">
-          <div style="font-size:0.72rem;color:#8A9BB0;font-style:italic;">"Achávamos que tínhamos um bom contrato. Os dados achavam diferente."</div>
-        </div>
-        <div style="display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid #2a2e32;font-size:0.7rem;color:#888;">
-          <span>👍 ❤️ 💡 89 reações</span><span>31 comentários · 18 partilhas</span>
-        </div>
-      </div>
-      <div style="padding:4px 8px 8px;display:flex;border-top:1px solid #2a2e32;">
-        <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">👍 Gosto</div>
-        <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">💬 Comentar</div>
-        <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">🔁 Partilhar</div>
-        <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">✉️ Enviar</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- POST 4 FACEBOOK -->
-  <div class="reveal" style="margin-bottom:48px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
-      <span style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--green);">POST 04 · SEMANA 4</span>
-      <span style="background:#1877F2;border-radius:4px;padding:3px 10px;font-size:0.62rem;font-family:'DM Mono',monospace;color:#fff;">Facebook</span>
-      <span style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--grey);">Opinião · Posicionamento da Marca</span>
-    </div>
-    <div style="max-width:480px;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #ddd;font-family:'Poppins',sans-serif;">
-      <div style="padding:12px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #f0f0f0;">
-        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--green),#007a52);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;color:#fff;flex-shrink:0;">FW</div>
-        <div><div style="font-size:0.82rem;font-weight:600;color:#1c1e21;">FleetWise Solutions</div><div style="font-size:0.65rem;color:#65676b;">Há 1 dia · 🌐</div></div>
-        <div style="margin-left:auto;color:#65676b;font-size:1.1rem;">···</div>
-      </div>
-      <div style="padding:14px 16px;">
-        <div style="font-size:0.83rem;color:#1c1e21;line-height:1.6;margin-bottom:12px;">
-          Uma locadora ganha quando vende contratos.<br>
-          A FleetWise ganha quando a sua empresa poupa.<br><br>
-          Não é a mesma coisa. E faz toda a diferença em quem deve gerir a sua frota.
-        </div>
-        <div style="background:linear-gradient(135deg,#0D1B2A,#1C2E42);border-radius:8px;padding:18px;text-align:center;margin-bottom:12px;">
-          <div style="font-size:0.85rem;color:#C8D4E0;line-height:1.6;font-style:italic;">"Os maiores custos de uma frota<br>são os que nunca aparecem<br>numa fatura."</div>
-          <div style="margin-top:12px;font-size:0.62rem;color:var(--green);font-family:'DM Mono',monospace;letter-spacing:0.08em;">FLEETWISE · fleetwisesolutions.pt</div>
-        </div>
-        <div style="display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid #f0f0f0;font-size:0.72rem;color:#65676b;">
-          <span>👍 ❤️ 52 pessoas</span><span>14 comentários · 9 partilhas</span>
-        </div>
-      </div>
-      <div style="padding:4px 8px 8px;display:flex;border-top:1px solid #f0f0f0;">
-        <div style="flex:1;padding:7px;text-align:center;font-size:0.73rem;color:#65676b;">👍 Gosto</div>
-        <div style="flex:1;padding:7px;text-align:center;font-size:0.73rem;color:#65676b;">💬 Comentar</div>
-        <div style="flex:1;padding:7px;text-align:center;font-size:0.73rem;color:#65676b;">↗️ Partilhar</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- POST 5 LINKEDIN + FACEBOOK -->
-  <div class="reveal" style="margin-bottom:0;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
-      <span style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--green);">POST 05 · SEMANA 5</span>
-      <span style="background:#0A66C2;border-radius:4px;padding:3px 10px;font-size:0.62rem;font-family:'DM Mono',monospace;color:#fff;">LinkedIn</span>
-      <span style="background:#1877F2;border-radius:4px;padding:3px 10px;font-size:0.62rem;font-family:'DM Mono',monospace;color:#fff;">Facebook</span>
-      <span style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--grey);">Call-to-Action · Conversão</span>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
-      <div>
-        <div style="font-family:'DM Mono',monospace;font-size:0.62rem;color:#0A66C2;margin-bottom:8px;letter-spacing:0.06em;">↳ VERSÃO LINKEDIN</div>
-        <div style="background:#1B1F23;border-radius:12px;overflow:hidden;border:1px solid #333;font-family:'Poppins',sans-serif;">
-          <div style="padding:10px 14px;border-bottom:1px solid #2a2e32;display:flex;align-items:center;gap:8px;">
-            <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--green),#007a52);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.75rem;color:#fff;flex-shrink:0;">FW</div>
-            <div><div style="font-size:0.78rem;font-weight:600;color:#e8e8e8;">FleetWise Solutions</div><div style="font-size:0.6rem;color:#666;">Agora · 🌐</div></div>
+    var posts = {
+      li: [
+        // POST 1 LI
+        `<div style="max-width:540px;background:#1B1F23;border-radius:12px;overflow:hidden;border:1px solid #333;font-family:'Poppins',sans-serif;">
+          <div style="padding:12px 16px;border-bottom:1px solid #2a2e32;display:flex;align-items:center;gap:10px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#00B67A,#007a52);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;color:#fff;flex-shrink:0;">FW</div>
+            <div><div style="font-size:0.82rem;font-weight:600;color:#e8e8e8;">FleetWise Solutions</div><div style="font-size:0.62rem;color:#666;">Agora · 🌐</div></div>
           </div>
-          <div style="padding:14px;font-size:0.78rem;color:#d0d0d0;line-height:1.6;">
-            O contrato de renting da sua empresa termina nos próximos 6 meses?<br><br>
-            Em 5 dias úteis identificamos quanto está a pagar a mais — e o que pode recuperar antes da renovação.<br><br>
-            <strong style="color:var(--green);">Sem compromisso. Se não houver poupança, não há custo.</strong>
-            <div style="margin-top:12px;background:#0D1B2A;border-radius:6px;padding:10px 12px;font-size:0.68rem;color:#8A9BB0;border:1px solid #1E3047;">🔗 fleetwisesolutions.pt · Análise gratuita</div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div style="font-family:'DM Mono',monospace;font-size:0.62rem;color:#1877F2;margin-bottom:8px;letter-spacing:0.06em;">↳ VERSÃO FACEBOOK</div>
-        <div style="background:#fff;border-radius:12px;overflow:hidden;border:1px solid #ddd;font-family:'Poppins',sans-serif;">
-          <div style="padding:10px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #f0f0f0;">
-            <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--green),#007a52);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.75rem;color:#fff;flex-shrink:0;">FW</div>
-            <div><div style="font-size:0.78rem;font-weight:600;color:#1c1e21;">FleetWise Solutions</div><div style="font-size:0.6rem;color:#65676b;">Agora · 🌐</div></div>
-          </div>
-          <div style="padding:14px;font-size:0.78rem;color:#1c1e21;line-height:1.6;">
-            A sua empresa renova o contrato de renting este ano?<br><br>
-            Fazemos uma análise gratuita em 5 dias. Se encontrarmos poupança — e quase sempre encontramos — tratamos de tudo.
-            <div style="margin-top:12px;background:linear-gradient(135deg,#0D1B2A,#142233);border-radius:6px;padding:10px 12px;display:flex;align-items:center;justify-content:space-between;">
-              <span style="font-size:0.68rem;color:#C8D4E0;">fleetwisesolutions.pt</span>
-              <span style="background:var(--green);color:#0D1B2A;font-weight:700;font-size:0.68rem;padding:5px 10px;border-radius:4px;">Saber mais</span>
+          <div style="padding:16px;">
+            <div style="font-size:0.82rem;color:#d0d0d0;line-height:1.6;margin-bottom:14px;">
+              <strong style="color:#fff;">Os maiores custos de uma frota são os que nunca aparecem numa fatura.</strong><br><br>
+              83% das empresas renovam o contrato de renting sem renegociar uma única cláusula.<br><br>
+              Não é descuido. É falta de informação no momento certo.<br><br>
+              💬 Comente <strong style="color:#00B67A;">"FROTA"</strong> e enviamos uma análise gratuita do seu contrato atual.
+            </div>
+            <div style="background:linear-gradient(135deg,#0D1B2A,#142233);border-radius:8px;padding:20px;border:1px solid #1E3047;margin-bottom:12px;text-align:center;">
+              <div style="font-family:'Poppins',sans-serif;font-weight:800;font-size:2.2rem;color:#00B67A;line-height:1;">83%</div>
+              <div style="font-size:0.72rem;color:#8A9BB0;margin:8px 0 10px;">das empresas renovam sem renegociar</div>
+              <div style="width:36px;height:2px;background:#00B67A;margin:0 auto 10px;"></div>
+              <div style="font-size:0.68rem;color:#C8D4E0;font-style:italic;">FleetWise. Clareza onde os outros vêem complexidade.</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid #2a2e32;font-size:0.7rem;color:#888;">
+              <span>👍 ❤️ 💡 47 reações</span><span>23 comentários · 12 partilhas</span>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
+          <div style="padding:4px 8px 8px;display:flex;border-top:1px solid #2a2e32;">
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">👍 Gosto</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">💬 Comentar</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">🔁 Partilhar</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">✉️ Enviar</div>
+          </div>
+        </div>`,
+        // POST 2 LI
+        `<div style="max-width:540px;background:#1B1F23;border-radius:12px;overflow:hidden;border:1px solid #333;font-family:'Poppins',sans-serif;">
+          <div style="padding:12px 16px;border-bottom:1px solid #2a2e32;display:flex;align-items:center;gap:10px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#00B67A,#007a52);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;color:#fff;flex-shrink:0;">FW</div>
+            <div><div style="font-size:0.82rem;font-weight:600;color:#e8e8e8;">FleetWise Solutions</div><div style="font-size:0.62rem;color:#666;">Há 1 dia · 🌐</div></div>
+          </div>
+          <div style="padding:16px;">
+            <div style="font-size:0.82rem;color:#d0d0d0;line-height:1.6;margin-bottom:14px;">
+              <strong style="color:#fff;">5 coisas que a sua locadora não irá dizer quando o contrato terminar:</strong><br><br>
+              1 — O preço por km excedente aumentou. Podia ter sido evitado com monitorização.<br>
+              2 — Tem direito a renegociar a taxa de juro implícita. Quase ninguém pede.<br>
+              3 — Mudar para PHEV agora pode reduzir a tributação autónoma em até 25 p.p.<br>
+              4 — O seu seguro pode ter coberturas duplicadas face a apólices existentes.<br>
+              5 — A locadora já calculou a margem desta renovação. A sua empresa ainda não.<br><br>
+              A informação existe. O que falta é tempo para a procurar — e alguém que o faça por si.
+            </div>
+            <div style="display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid #2a2e32;font-size:0.7rem;color:#888;">
+              <span>👍 ❤️ 💡 63 reações</span><span>19 comentários · 28 partilhas</span>
+            </div>
+          </div>
+          <div style="padding:4px 8px 8px;display:flex;border-top:1px solid #2a2e32;">
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">👍 Gosto</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">💬 Comentar</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">🔁 Partilhar</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">✉️ Enviar</div>
+          </div>
+        </div>`,
+        // POST 3 LI
+        `<div style="max-width:540px;background:#1B1F23;border-radius:12px;overflow:hidden;border:1px solid #333;font-family:'Poppins',sans-serif;">
+          <div style="padding:12px 16px;border-bottom:1px solid #2a2e32;display:flex;align-items:center;gap:10px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#00B67A,#007a52);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;color:#fff;flex-shrink:0;">FW</div>
+            <div><div style="font-size:0.82rem;font-weight:600;color:#e8e8e8;">FleetWise Solutions</div><div style="font-size:0.62rem;color:#666;">Há 3 dias · 🌐</div></div>
+          </div>
+          <div style="padding:16px;">
+            <div style="font-size:0.82rem;color:#d0d0d0;line-height:1.6;margin-bottom:14px;">
+              <strong style="color:#fff;">Um escritório de advogados em Lisboa poupou 14.400€ em 3 anos.</strong><br><br>
+              5 viaturas premium. Ninguém sabia exactamente quanto pagava em tributação autónoma.<br><br>
+              Identificámos três ineficiências:<br>
+              — 2 viaturas com taxa de 35% que podiam ser PHEV a 10%<br>
+              — Quilometragem contratada desajustada da utilização real<br>
+              — Seguro com cobertura duplicada face à apólice existente<br><br>
+              Resultado: <strong style="color:#00B67A;">4.800€ de poupança por ano.</strong> Sem mudar de locadora.
+            </div>
+            <div style="background:#142233;border-radius:8px;padding:14px 16px;margin-bottom:12px;border-left:3px solid #00B67A;">
+              <div style="font-size:0.72rem;color:#8A9BB0;font-style:italic;">"Achávamos que tínhamos um bom contrato. Os dados achavam diferente."</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid #2a2e32;font-size:0.7rem;color:#888;">
+              <span>👍 ❤️ 💡 89 reações</span><span>31 comentários · 18 partilhas</span>
+            </div>
+          </div>
+          <div style="padding:4px 8px 8px;display:flex;border-top:1px solid #2a2e32;">
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">👍 Gosto</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">💬 Comentar</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">🔁 Partilhar</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">✉️ Enviar</div>
+          </div>
+        </div>`,
+        // POST 4 LI
+        `<div style="max-width:540px;background:#1B1F23;border-radius:12px;overflow:hidden;border:1px solid #333;font-family:'Poppins',sans-serif;">
+          <div style="padding:12px 16px;border-bottom:1px solid #2a2e32;display:flex;align-items:center;gap:10px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#00B67A,#007a52);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;color:#fff;flex-shrink:0;">FW</div>
+            <div><div style="font-size:0.82rem;font-weight:600;color:#e8e8e8;">FleetWise Solutions</div><div style="font-size:0.62rem;color:#666;">Há 4 dias · 🌐</div></div>
+          </div>
+          <div style="padding:16px;">
+            <div style="font-size:0.82rem;color:#d0d0d0;line-height:1.6;margin-bottom:14px;">
+              Uma locadora ganha quando vende contratos.<br>
+              A FleetWise ganha quando a sua empresa poupa.<br><br>
+              Não é a mesma coisa. E faz toda a diferença em quem deve gerir a sua frota.<br><br>
+              Somos consultores independentes. Sem contratos de locação para vender, sem marcas a promover, sem conflito de interesses. Apenas os seus dados e os seus interesses.
+            </div>
+            <div style="background:#142233;border-radius:8px;padding:16px;margin-bottom:12px;text-align:center;border:1px solid #1E3047;">
+              <div style="font-size:0.82rem;color:#C8D4E0;line-height:1.6;font-style:italic;">"Os maiores custos de uma frota são os que nunca aparecem numa fatura."</div>
+              <div style="margin-top:10px;font-size:0.62rem;color:#00B67A;font-family:'DM Mono',monospace;letter-spacing:0.08em;">FLEETWISE · fleetwisesolutions.pt</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid #2a2e32;font-size:0.7rem;color:#888;">
+              <span>👍 ❤️ 74 reações</span><span>22 comentários · 15 partilhas</span>
+            </div>
+          </div>
+          <div style="padding:4px 8px 8px;display:flex;border-top:1px solid #2a2e32;">
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">👍 Gosto</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">💬 Comentar</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">🔁 Partilhar</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">✉️ Enviar</div>
+          </div>
+        </div>`,
+        // POST 5 LI
+        `<div style="max-width:540px;background:#1B1F23;border-radius:12px;overflow:hidden;border:1px solid #333;font-family:'Poppins',sans-serif;">
+          <div style="padding:12px 16px;border-bottom:1px solid #2a2e32;display:flex;align-items:center;gap:10px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#00B67A,#007a52);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;color:#fff;flex-shrink:0;">FW</div>
+            <div><div style="font-size:0.82rem;font-weight:600;color:#e8e8e8;">FleetWise Solutions</div><div style="font-size:0.62rem;color:#666;">Agora · 🌐</div></div>
+          </div>
+          <div style="padding:16px;">
+            <div style="font-size:0.82rem;color:#d0d0d0;line-height:1.6;margin-bottom:14px;">
+              O contrato de renting da sua empresa termina nos próximos 6 meses?<br><br>
+              Em 5 dias úteis identificamos quanto está a pagar a mais — e o que pode recuperar antes da renovação.<br><br>
+              <strong style="color:#00B67A;">Sem compromisso. Se não houver poupança, não há custo.</strong>
+            </div>
+            <div style="background:#0D1B2A;border-radius:6px;padding:12px 14px;font-size:0.7rem;color:#8A9BB0;border:1px solid #1E3047;margin-bottom:12px;">🔗 fleetwisesolutions.pt · Análise gratuita da sua frota</div>
+            <div style="display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid #2a2e32;font-size:0.7rem;color:#888;">
+              <span>👍 ❤️ 41 reações</span><span>17 comentários · 9 partilhas</span>
+            </div>
+          </div>
+          <div style="padding:4px 8px 8px;display:flex;border-top:1px solid #2a2e32;">
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">👍 Gosto</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">💬 Comentar</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">🔁 Partilhar</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.7rem;color:#888;">✉️ Enviar</div>
+          </div>
+        </div>`
+      ],
+      fb: [
+        // POST 1 FB
+        `<div style="max-width:480px;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #ddd;font-family:'Poppins',sans-serif;">
+          <div style="padding:12px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #f0f0f0;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#00B67A,#007a52);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;color:#fff;flex-shrink:0;">FW</div>
+            <div><div style="font-size:0.82rem;font-weight:600;color:#1c1e21;">FleetWise Solutions</div><div style="font-size:0.65rem;color:#65676b;">Agora · 🌐</div></div>
+            <div style="margin-left:auto;color:#65676b;font-size:1.1rem;">···</div>
+          </div>
+          <div style="padding:14px 16px;">
+            <div style="font-size:0.83rem;color:#1c1e21;line-height:1.6;margin-bottom:12px;">
+              A sua empresa tem viaturas? Sabia que a maioria das empresas paga mais do que devia — sem saber?<br><br>
+              Os custos que mais pesam numa frota são os que não aparecem nas faturas: tributação mal otimizada, contratos desatualizados, quilómetros excedentes não monitorizados.<br><br>
+              A <strong>FleetWise</strong> analisa a sua frota e identifica onde está a perder dinheiro — sem compromisso.
+            </div>
+            <div style="background:linear-gradient(135deg,#0D1B2A,#1C2E42);border-radius:8px;padding:18px;text-align:center;margin-bottom:12px;">
+              <div style="font-family:'Poppins',sans-serif;font-weight:800;font-size:1.5rem;color:#00B67A;margin-bottom:6px;">Análise gratuita</div>
+              <div style="font-size:0.72rem;color:#C8D4E0;margin-bottom:12px;">Resultados em 5 dias úteis</div>
+              <div style="background:#00B67A;color:#0D1B2A;font-weight:700;font-size:0.75rem;padding:8px 20px;border-radius:6px;display:inline-block;">Saber mais →</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid #f0f0f0;font-size:0.72rem;color:#65676b;">
+              <span>👍 ❤️ 😮 34 pessoas</span><span>8 comentários · 5 partilhas</span>
+            </div>
+          </div>
+          <div style="padding:4px 8px 8px;display:flex;border-top:1px solid #f0f0f0;">
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.73rem;color:#65676b;">👍 Gosto</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.73rem;color:#65676b;">💬 Comentar</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.73rem;color:#65676b;">↗️ Partilhar</div>
+          </div>
+        </div>`,
+        // POST 2 FB
+        `<div style="max-width:480px;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #ddd;font-family:'Poppins',sans-serif;">
+          <div style="padding:12px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #f0f0f0;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#00B67A,#007a52);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;color:#fff;flex-shrink:0;">FW</div>
+            <div><div style="font-size:0.82rem;font-weight:600;color:#1c1e21;">FleetWise Solutions</div><div style="font-size:0.65rem;color:#65676b;">Há 1 dia · 🌐</div></div>
+            <div style="margin-left:auto;color:#65676b;font-size:1.1rem;">···</div>
+          </div>
+          <div style="padding:14px 16px;">
+            <div style="font-size:0.83rem;color:#1c1e21;line-height:1.6;margin-bottom:12px;">
+              Sabia que há 5 coisas que a sua locadora nunca irá dizer quando o contrato de renting terminar?<br><br>
+              Desde custos escondidos a benefícios fiscais que nunca aproveitou — a informação que falta é muitas vezes a mais cara.<br><br>
+              Deixe um ❤️ se quiser receber o nosso guia gratuito de renovação de frota.
+            </div>
+            <div style="background:linear-gradient(135deg,#0D1B2A,#1C2E42);border-radius:8px;padding:16px;text-align:center;margin-bottom:12px;">
+              <div style="font-size:0.78rem;color:#C8D4E0;margin-bottom:8px;font-weight:600;">Guia gratuito</div>
+              <div style="font-size:0.72rem;color:#8A9BB0;">"O que negociar antes de renovar o renting"</div>
+              <div style="margin-top:10px;background:#00B67A;color:#0D1B2A;font-weight:700;font-size:0.72rem;padding:6px 16px;border-radius:4px;display:inline-block;">Descarregar grátis</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid #f0f0f0;font-size:0.72rem;color:#65676b;">
+              <span>👍 ❤️ 51 pessoas</span><span>12 comentários · 8 partilhas</span>
+            </div>
+          </div>
+          <div style="padding:4px 8px 8px;display:flex;border-top:1px solid #f0f0f0;">
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.73rem;color:#65676b;">👍 Gosto</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.73rem;color:#65676b;">💬 Comentar</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.73rem;color:#65676b;">↗️ Partilhar</div>
+          </div>
+        </div>`,
+        // POST 3 FB
+        `<div style="max-width:480px;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #ddd;font-family:'Poppins',sans-serif;">
+          <div style="padding:12px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #f0f0f0;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#00B67A,#007a52);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;color:#fff;flex-shrink:0;">FW</div>
+            <div><div style="font-size:0.82rem;font-weight:600;color:#1c1e21;">FleetWise Solutions</div><div style="font-size:0.65rem;color:#65676b;">Há 3 dias · 🌐</div></div>
+            <div style="margin-left:auto;color:#65676b;font-size:1.1rem;">···</div>
+          </div>
+          <div style="padding:14px 16px;">
+            <div style="font-size:0.83rem;color:#1c1e21;line-height:1.6;margin-bottom:12px;">
+              Um escritório de advogados de Lisboa descobriu que estava a pagar 4.800€ a mais por ano na sua frota de 5 viaturas.<br><br>
+              Não mudou de locadora. Não comprou carros novos. Apenas soube o que estava a pagar — e negociou com essa informação.
+            </div>
+            <div style="background:linear-gradient(135deg,#0D1B2A,#1C2E42);border-radius:8px;padding:18px;text-align:center;margin-bottom:12px;">
+              <div style="font-family:'Poppins',sans-serif;font-weight:800;font-size:2rem;color:#00B67A;">14.400€</div>
+              <div style="font-size:0.72rem;color:#8A9BB0;margin-top:4px;">poupados em 3 anos · 5 viaturas premium</div>
+            </div>
+            <div style="font-size:0.8rem;color:#1c1e21;">Quer saber quanto a sua empresa está a pagar a mais? <strong>Análise gratuita em 5 dias.</strong></div>
+            <div style="display:flex;justify-content:space-between;padding-top:10px;border-top:1px solid #f0f0f0;font-size:0.72rem;color:#65676b;margin-top:10px;">
+              <span>👍 ❤️ 😮 67 pessoas</span><span>19 comentários · 14 partilhas</span>
+            </div>
+          </div>
+          <div style="padding:4px 8px 8px;display:flex;border-top:1px solid #f0f0f0;">
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.73rem;color:#65676b;">👍 Gosto</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.73rem;color:#65676b;">💬 Comentar</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.73rem;color:#65676b;">↗️ Partilhar</div>
+          </div>
+        </div>`,
+        // POST 4 FB
+        `<div style="max-width:480px;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #ddd;font-family:'Poppins',sans-serif;">
+          <div style="padding:12px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #f0f0f0;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#00B67A,#007a52);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;color:#fff;flex-shrink:0;">FW</div>
+            <div><div style="font-size:0.82rem;font-weight:600;color:#1c1e21;">FleetWise Solutions</div><div style="font-size:0.65rem;color:#65676b;">Há 4 dias · 🌐</div></div>
+            <div style="margin-left:auto;color:#65676b;font-size:1.1rem;">···</div>
+          </div>
+          <div style="padding:14px 16px;">
+            <div style="font-size:0.83rem;color:#1c1e21;line-height:1.6;margin-bottom:12px;">
+              Uma locadora ganha quando vende contratos.<br>
+              A FleetWise ganha quando a sua empresa poupa.<br><br>
+              Não é a mesma coisa. E faz toda a diferença em quem deve gerir a sua frota.
+            </div>
+            <div style="background:linear-gradient(135deg,#0D1B2A,#1C2E42);border-radius:8px;padding:18px;text-align:center;margin-bottom:12px;">
+              <div style="font-size:0.85rem;color:#C8D4E0;line-height:1.6;font-style:italic;">"Os maiores custos de uma frota<br>são os que nunca aparecem<br>numa fatura."</div>
+              <div style="margin-top:12px;font-size:0.62rem;color:#00B67A;font-family:'DM Mono',monospace;letter-spacing:0.08em;">FLEETWISE · fleetwisesolutions.pt</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid #f0f0f0;font-size:0.72rem;color:#65676b;">
+              <span>👍 ❤️ 52 pessoas</span><span>14 comentários · 9 partilhas</span>
+            </div>
+          </div>
+          <div style="padding:4px 8px 8px;display:flex;border-top:1px solid #f0f0f0;">
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.73rem;color:#65676b;">👍 Gosto</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.73rem;color:#65676b;">💬 Comentar</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.73rem;color:#65676b;">↗️ Partilhar</div>
+          </div>
+        </div>`,
+        // POST 5 FB
+        `<div style="max-width:480px;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #ddd;font-family:'Poppins',sans-serif;">
+          <div style="padding:12px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #f0f0f0;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#00B67A,#007a52);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;color:#fff;flex-shrink:0;">FW</div>
+            <div><div style="font-size:0.82rem;font-weight:600;color:#1c1e21;">FleetWise Solutions</div><div style="font-size:0.65rem;color:#65676b;">Agora · 🌐</div></div>
+            <div style="margin-left:auto;color:#65676b;font-size:1.1rem;">···</div>
+          </div>
+          <div style="padding:14px 16px;">
+            <div style="font-size:0.83rem;color:#1c1e21;line-height:1.6;margin-bottom:12px;">
+              A sua empresa renova o contrato de renting este ano?<br><br>
+              Fazemos uma análise gratuita em 5 dias. Se encontrarmos poupança — e quase sempre encontramos — tratamos de tudo.
+            </div>
+            <div style="background:linear-gradient(135deg,#0D1B2A,#142233);border-radius:6px;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+              <span style="font-size:0.72rem;color:#C8D4E0;">fleetwisesolutions.pt</span>
+              <span style="background:#00B67A;color:#0D1B2A;font-weight:700;font-size:0.72rem;padding:6px 12px;border-radius:4px;">Saber mais</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid #f0f0f0;font-size:0.72rem;color:#65676b;">
+              <span>👍 ❤️ 38 pessoas</span><span>11 comentários · 6 partilhas</span>
+            </div>
+          </div>
+          <div style="padding:4px 8px 8px;display:flex;border-top:1px solid #f0f0f0;">
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.73rem;color:#65676b;">👍 Gosto</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.73rem;color:#65676b;">💬 Comentar</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:0.73rem;color:#65676b;">↗️ Partilhar</div>
+          </div>
+        </div>`
+      ]
+    };
+
+    function render() {
+      // Update counter
+      document.getElementById('post-counter').textContent = 'POST ' + (current+1) + '/5';
+
+      // Update meta
+      var meta = metas[current];
+      var netColor = network === 'li' ? '#0A66C2' : '#1877F2';
+      var netLabel = network === 'li' ? 'LinkedIn' : 'Facebook';
+      var typeLabel = network === 'li' ? meta.type : meta.type;
+      document.getElementById('post-meta').innerHTML =
+        '<span style="font-family:DM Mono,monospace;font-size:0.65rem;color:#00B67A;">SEMANA ' + (current+1) + '</span>' +
+        '<span style="background:' + netColor + ';border-radius:4px;padding:3px 10px;font-size:0.62rem;font-family:DM Mono,monospace;color:#fff;">' + netLabel + '</span>' +
+        '<span style="font-family:DM Mono,monospace;font-size:0.65rem;color:#8A9BB0;">' + typeLabel + '</span>';
+
+      // Animate and update content
+      var pc = document.getElementById('post-content');
+      pc.style.opacity = '0';
+      setTimeout(function(){
+        pc.innerHTML = posts[network][current];
+        pc.style.opacity = '1';
+      }, 150);
+    }
+
+    window.navPost = function(dir) {
+      current = (current + dir + 5) % 5;
+      render();
+    };
+
+    window.setNetwork = function(net) {
+      network = net;
+      var btnLi = document.getElementById('btn-li');
+      var btnFb = document.getElementById('btn-fb');
+      if (net === 'li') {
+        btnLi.style.background = '#0A66C2'; btnLi.style.color = '#fff';
+        btnFb.style.background = 'var(--navy-mid)'; btnFb.style.color = 'var(--grey)';
+      } else {
+        btnFb.style.background = '#1877F2'; btnFb.style.color = '#fff';
+        btnLi.style.background = 'var(--navy-mid)'; btnLi.style.color = 'var(--grey)';
+      }
+      render();
+    };
+
+    render();
+  })();
+  </script>
   <div class="divider"></div>
   <h3 class="reveal" style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:8px;">Execução com IA — Spot Publicitário</h3>
   <p class="reveal" style="color:var(--grey);font-size:0.85rem;margin-bottom:24px;">Ferramentas: ElevenLabs (narração PT) · Runway ML (geração de vídeo) · CapCut (edição e legendas)</p>
