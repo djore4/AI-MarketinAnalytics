@@ -232,6 +232,9 @@
     .card h3 { font-size: 0.78rem; }
     .card p { font-size: 0.72rem; }
 
+    /* NOTA FINAL — 3 blocos em coluna no mobile */
+    #conclusao .reveal > div[style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
+
     /* PONTO II — Desk Research stats */
     .reveal[style*="grid-template-columns:repeat(4"] { grid-template-columns: 1fr 1fr !important; }
     .reveal[style*="grid-template-columns:repeat(4"] > div { min-width: 0 !important; box-sizing: border-box !important; }
@@ -288,11 +291,12 @@
   <a href="#hero" class="nav-logo">Fleet<span>Wise</span></a>
   <ul class="nav-links" id="nav-links">
     <li><a href="#ponto1" onclick="closeMenu()">I. IA</a></li>
-    <li><a href="#ponto2" onclick="closeMenu()">II. Market & User Research</a></li>
+    <li><a href="#ponto2" onclick="closeMenu()">II. Research</a></li>
     <li><a href="#ponto3" onclick="closeMenu()">III. Campanha</a></li>
     <li><a href="#ponto4" onclick="closeMenu()">IV. Automação</a></li>
     <li><a href="#ponto5" onclick="closeMenu()">V. Métricas</a></li>
     <li><a href="#ponto6" onclick="closeMenu()">VI. Dashboard</a></li>
+    <li><a href="#conclusao" onclick="closeMenu()">Reflexão</a></li>
   </ul>
   <button id="hamburger" onclick="toggleMenu()" aria-label="Menu" style="display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--grey-light);font-size:1.4rem;line-height:1;">☰</button>
 </nav>
@@ -988,7 +992,7 @@ END CARD: activar slide final automático com logo FleetWise + "fleetwisesolutio
     <div class="fluxo-card">
       <div class="fluxo-header">
         <h3>Fluxo A — Entrada Digital</h3>
-        <span class="fluxo-badge">Redes Sociais / Site</span>
+        <span class="fluxo-badge">LinkedIn / Site</span>
       </div>
       <div class="fluxo-body">
         <div class="fluxo-step"><div class="step-num">1</div><div class="step-content"><h4>Trigger — Interação Digital</h4><p>Lead comenta "FROTA" no LinkedIn ou preenche formulário no site. HubSpot regista nome, empresa, NIF, nº viaturas, data estimada fim de contrato.</p></div></div>
@@ -1182,6 +1186,65 @@ END CARD: activar slide final automático com logo FleetWise + "fleetwisesolutio
         <tr><td><strong>Total</strong></td><td></td><td><strong style="color:var(--green)">&lt; 65 €/mês</strong></td></tr>
       </tbody>
     </table>
+  </div>
+</section>
+
+<!-- SECÇÃO FINAL -->
+<section id="conclusao" style="border-top:1px solid var(--border);background:linear-gradient(180deg, var(--navy) 0%, #0a1520 100%);">
+  <div class="section-header reveal">
+    <span class="section-num">NOTA FINAL</span>
+    <h2 class="section-title">Reflexão sobre<br><em>o Processo</em></h2>
+  </div>
+
+  <!-- INTRO -->
+  <div class="reveal" style="max-width:100%;margin-bottom:56px;">
+    <p style="font-size:1rem;color:var(--grey-light);line-height:1.9;margin-bottom:20px;">
+      Este trabalho não é apenas um exercício académico sobre a FleetWise — é em si mesmo uma demonstração prática do que a disciplina de <strong style="color:var(--white)">AI & Marketing Analytics</strong> nos ensinou a fazer: utilizar ferramentas de inteligência artificial não como atalhos, mas como amplificadores de pensamento estratégico.
+    </p>
+    <p style="font-size:1rem;color:var(--grey-light);line-height:1.9;">
+      A Porto Business School proporcionou-nos um contexto de aprendizagem raro — aulas onde a teoria e a prática colapsaram numa única experiência. Saímos de cada sessão não apenas com novos conceitos, mas com novos métodos de trabalhar, pensar e criar.
+    </p>
+  </div>
+
+  <!-- 3 BLOCOS -->
+  <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:56px;">
+
+    <div style="background:var(--navy-mid);border:1px solid var(--border);border-radius:16px;padding:28px;border-top:3px solid var(--green);">
+      <div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--green);letter-spacing:0.1em;margin-bottom:14px;">CONTEÚDO & ESTRATÉGIA</div>
+      <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:12px;">Claude + Projecto FleetWise</div>
+      <div style="font-size:0.82rem;color:var(--grey-light);line-height:1.7;">
+        Todo o conteúdo estratégico foi desenvolvido em <strong style="color:var(--white)">Claude (Anthropic)</strong>, através da criação de um projecto dedicado alimentado com os documentos previamente desenvolvidos para a FleetWise — análise SWOT, posicionamento, segmentação e motor económico. Esta base de contexto permitiu gerar análises coerentes, personas credíveis e uma campanha alinhada com a identidade real da empresa, em fracção do tempo que levaria de forma tradicional.
+      </div>
+    </div>
+
+    <div style="background:var(--navy-mid);border:1px solid var(--border);border-radius:16px;padding:28px;border-top:3px solid var(--green);">
+      <div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--green);letter-spacing:0.1em;margin-bottom:14px;">GERAÇÃO DE IMAGEM</div>
+      <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:12px;">Google Gemini — Nano Banana Pro</div>
+      <div style="font-size:0.82rem;color:var(--grey-light);line-height:1.7;">
+        As fotografias das personas — João Silva, Carla Mendes e Ricardo Azevedo — foram geradas com o <strong style="color:var(--white)">Nano Banana Pro da Google</strong>, uma ferramenta que revelou uma capacidade impressionante de contextualização cultural. As imagens resultaram autênticas, profissionais e perfeitamente alinhadas com o mercado português — uma das descobertas mais interessantes do processo.
+      </div>
+    </div>
+
+    <div style="background:var(--navy-mid);border:1px solid var(--border);border-radius:16px;padding:28px;border-top:3px solid var(--green);">
+      <div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--green);letter-spacing:0.1em;margin-bottom:14px;">GERAÇÃO DE VÍDEO</div>
+      <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:12px;">HeyGen — A Plataforma Mais Eficiente</div>
+      <div style="font-size:0.82rem;color:var(--grey-light);line-height:1.7;">
+        Após testar várias plataformas de geração de vídeo, o <strong style="color:var(--white)">HeyGen</strong> revelou-se claramente o mais produtivo: controlo preciso do script em português europeu, avatares realistas e integração de brand kit sem fricção. O resultado — o spot publicitário da FleetWise — foi produzido em menos de uma hora a partir do script desenvolvido com Claude.
+      </div>
+    </div>
+  </div>
+
+  <!-- QUOTE FINAL -->
+  <div class="reveal" style="background:var(--navy);border:1px solid var(--border);border-radius:20px;padding:48px 56px;text-align:center;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(0,182,122,0.08),transparent);border-radius:50%;"></div>
+    <div style="position:absolute;bottom:-60px;left:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(0,182,122,0.06),transparent);border-radius:50%;"></div>
+    <div style="font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--green);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:20px;">Uma última nota</div>
+    <div style="font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(1rem,2.5vw,1.4rem);line-height:1.5;margin-bottom:24px;max-width:700px;margin-left:auto;margin-right:auto;">
+      "A maior aprendizagem desta disciplina não foi dominar as ferramentas — foi perceber que as ferramentas certas, bem utilizadas, libertam tempo e energia para o que realmente importa: pensar."
+    </div>
+    <div style="width:48px;height:2px;background:var(--green);margin:0 auto 20px;"></div>
+    <div style="font-size:0.8rem;color:var(--grey);">Diana Macedo · João Duarte · Nuno Nápoles · Sharon Sanchez · Vicente Brito</div>
+    <div style="font-size:0.75rem;color:var(--grey);margin-top:6px;">Porto Business School · AI & Marketing Analytics · Maio 2026</div>
   </div>
 </section>
 
