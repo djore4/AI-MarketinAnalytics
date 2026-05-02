@@ -210,6 +210,9 @@
     .card h3 { font-size: 0.78rem; }
     .card p { font-size: 0.72rem; }
 
+    /* PONTO II — Desk Research stats */
+    .reveal > div[style*="grid-template-columns:repeat(4"] { grid-template-columns: 1fr 1fr !important; }
+
     /* PONTO II — Personas 1 coluna */
     .persona-grid { grid-template-columns: 1fr; }
 
@@ -498,8 +501,28 @@
     </div>
   </div>
   <div class="divider"></div>
-  <h3 class="reveal" style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:8px;font-size:1.1rem;color:var(--grey-light);text-transform:uppercase;letter-spacing:0.08em;">Desk Research — Contexto de Mercado</h3>
-  <p class="reveal" style="color:var(--grey-light);max-width:760px;margin-bottom:40px;font-size:0.9rem;line-height:1.7;">Portugal tem cerca de 420.000 PMEs activas, das quais 15 a 20% operam com pelo menos uma viatura afecta à actividade. O segmento de 3 a 30 viaturas representa a maior fatia em número de empresas mas a menor em sofisticação de gestão. A maioria não tem política de frota definida, não monitoriza TCO e desconhece o impacto real da Tributação Autónoma (art.º 88.º CIRC).</p>
+  <h3 class="reveal" style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:24px;font-size:1.1rem;color:var(--grey-light);text-transform:uppercase;letter-spacing:0.08em;">Desk Research — Contexto de Mercado</h3>
+
+  <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px;">
+    <div style="background:var(--navy-mid);border:1px solid var(--border);border-top:3px solid var(--green);border-radius:12px;padding:24px 20px;text-align:center;">
+      <div style="font-family:'Poppins',sans-serif;font-weight:800;font-size:2.2rem;color:var(--green);line-height:1;margin-bottom:8px;">420K</div>
+      <div style="font-size:0.75rem;color:var(--grey-light);line-height:1.4;">PMEs ativas<br>em Portugal</div>
+    </div>
+    <div style="background:var(--navy-mid);border:1px solid var(--border);border-top:3px solid var(--green);border-radius:12px;padding:24px 20px;text-align:center;">
+      <div style="font-family:'Poppins',sans-serif;font-weight:800;font-size:2.2rem;color:var(--green);line-height:1;margin-bottom:8px;">16%</div>
+      <div style="font-size:0.75rem;color:var(--grey-light);line-height:1.4;">CAGR do mercado<br>fleet management</div>
+    </div>
+    <div style="background:var(--navy-mid);border:1px solid var(--border);border-top:3px solid var(--green);border-radius:12px;padding:24px 20px;text-align:center;">
+      <div style="font-family:'Poppins',sans-serif;font-weight:800;font-size:2.2rem;color:var(--green);line-height:1;margin-bottom:8px;">70%</div>
+      <div style="font-size:0.75rem;color:var(--grey-light);line-height:1.4;">PMEs sem política<br>de frota definida</div>
+    </div>
+    <div style="background:var(--navy-mid);border:1px solid var(--border);border-top:3px solid var(--green);border-radius:12px;padding:24px 20px;text-align:center;">
+      <div style="font-family:'Poppins',sans-serif;font-weight:800;font-size:2.2rem;color:var(--green);line-height:1;margin-bottom:8px;">3.º</div>
+      <div style="font-size:0.75rem;color:var(--grey-light);line-height:1.4;">maior custo fixo<br>das empresas</div>
+    </div>
+  </div>
+
+  <p class="reveal" style="color:var(--grey-light);max-width:760px;margin-bottom:40px;font-size:0.88rem;line-height:1.7;padding:16px 20px;background:var(--navy-mid);border-radius:10px;border-left:3px solid var(--border);">O segmento de 3 a 30 viaturas representa a maior fatia em número de empresas mas a menor em sofisticação de gestão. A maioria não tem política de frota definida, não monitoriza TCO e desconhece o impacto real da Tributação Autónoma (art.º 88.º CIRC) — criando ineficiências fiscais sistemáticas e invisíveis.</p>
   <div class="divider"></div>
   <h3 class="reveal" style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:28px;font-size:1.1rem;color:var(--grey-light);text-transform:uppercase;letter-spacing:0.08em;">As 3 Oportunidades Identificadas</h3>
   <div class="opp-grid reveal">
@@ -524,12 +547,12 @@
       <table>
         <thead><tr><th>Critério</th><th>A — Alerta Fiscal</th><th>B — Mix Personalizado</th><th>C — Trigger Renovação</th></tr></thead>
         <tbody>
-          <tr><td>Relevância para o João</td><td>Alta</td><td>Média</td><td>Alta</td></tr>
-          <tr><td>Relevância para a Carla</td><td>Média</td><td>Alta</td><td>Alta</td></tr>
-          <tr><td>Relevância para o Ricardo</td><td>Alta</td><td>Baixa</td><td>Alta</td></tr>
-          <tr><td>Dep. de dados iniciais</td><td>Média</td><td>Alta</td><td>Baixa</td></tr>
-          <tr><td>Facilidade execução Ano 1</td><td>Alta</td><td>Média</td><td>Alta</td></tr>
-          <tr><td>Diferenciação face concorrência</td><td>Alta</td><td>Alta</td><td><strong style="color:var(--green)">Muito Alta</strong></td></tr>
+          <tr><td>Relevância para o João</td><td><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0;display:inline-block;"></span>Alta</span></td><td><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:#FFB400;flex-shrink:0;display:inline-block;"></span>Média</span></td><td><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0;display:inline-block;"></span>Alta</span></td></tr>
+          <tr><td>Relevância para a Carla</td><td><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:#FFB400;flex-shrink:0;display:inline-block;"></span>Média</span></td><td><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0;display:inline-block;"></span>Alta</span></td><td><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0;display:inline-block;"></span>Alta</span></td></tr>
+          <tr><td>Relevância para o Ricardo</td><td><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0;display:inline-block;"></span>Alta</span></td><td><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--grey);flex-shrink:0;display:inline-block;"></span>Baixa</span></td><td><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0;display:inline-block;"></span>Alta</span></td></tr>
+          <tr><td>Dep. de dados iniciais</td><td><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:#FFB400;flex-shrink:0;display:inline-block;"></span>Média</span></td><td><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--grey);flex-shrink:0;display:inline-block;"></span>Alta</span></td><td><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0;display:inline-block;"></span>Baixa</span></td></tr>
+          <tr><td>Facilidade execução Ano 1</td><td><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0;display:inline-block;"></span>Alta</span></td><td><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:#FFB400;flex-shrink:0;display:inline-block;"></span>Média</span></td><td><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0;display:inline-block;"></span>Alta</span></td></tr>
+          <tr><td>Diferenciação face concorrência</td><td><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0;display:inline-block;"></span>Alta</span></td><td><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0;display:inline-block;"></span>Alta</span></td><td><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0;display:inline-block;"></span><strong style="color:var(--green)">Muito Alta</strong></span></td></tr>
         </tbody>
       </table>
     </div>
