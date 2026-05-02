@@ -961,14 +961,104 @@
   <div class="divider"></div>
   <h3 class="reveal" style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:8px;">Execução com IA — Spot Publicitário</h3>
   <p class="reveal" style="color:var(--grey);font-size:0.85rem;margin-bottom:24px;">Ferramentas: ElevenLabs (narração PT) · Runway ML (geração de vídeo) · CapCut (edição e legendas)</p>
-  <div class="video-slot reveal">
-    <div class="video-icon">▶</div>
-    <h3>"Do Lado Certo" — Spot 60 segundos</h3>
-    <p>Slot reservado para embed do spot publicitário gerado com IA.<br>Ferramentas: Runway ML · ElevenLabs · CapCut · Script gerado com Claude</p>
+  <!-- VIDEO EMBED -->
+  <div class="reveal" style="margin-bottom:0;">
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;border:1px solid var(--border);">
+      <iframe
+        src="https://www.youtube.com/embed/QlYNtti264s?rel=0&modestbranding=1&color=white"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        title="FleetWise — Spot Publicitário">
+      </iframe>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px;flex-wrap:wrap;gap:8px;">
+      <div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--grey);">Produção: Veo3 · HeyGen · Synthesia · Pós-produção: CapCut</div>
+      <a href="https://youtu.be/QlYNtti264s" target="_blank" style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--green);text-decoration:none;">Ver no YouTube ↗</a>
+    </div>
   </div>
-  <div class="prompt-box reveal" style="margin-top:32px;margin-bottom:0;">
-    <div class="prompt-label">↳ Prompt utilizado para o script do spot</div>
-    <div class="prompt-text">"Escreve um script de 60 segundos para um spot publicitário da FleetWise. O spot mostra o momento exato em que uma PME recebe a proposta de renovação da locadora — e não sabe se é boa ou má. O tom é próximo, sem dramatismo, realista. Termina com a proposta de valor da FleetWise: 'sempre do teu lado'. Deve funcionar sem som — com legendas — e com som."</div>
+
+  <!-- PROMPTS DE PRODUÇÃO -->
+  <div class="reveal" style="margin-top:40px;">
+    <h3 style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:24px;font-size:1rem;">Prompts de Produção por Ferramenta</h3>
+
+    <!-- LOGO PREVIEW -->
+    <div style="background:var(--navy-mid);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:24px;display:flex;align-items:center;gap:20px;">
+      <img src="data:image/png;base64,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" alt="FleetWise Logo" style="height:28px;width:auto;">
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--green);margin-bottom:4px;">ASSET DE MARCA</div>
+        <div style="font-size:0.78rem;color:var(--grey-light);">Logo FleetWise — inserir via <strong style="color:var(--white)">Brand Kit</strong> no HeyGen/Synthesia · via <strong style="color:var(--white)">overlay</strong> no CapCut para pós-produção Veo3</div>
+      </div>
+    </div>
+
+    <!-- VEO3 -->
+    <div class="prompt-box" style="margin-bottom:20px;">
+      <div class="prompt-label">↳ VEO3 — Prompt cinematográfico (EN)</div>
+      <div class="prompt-text">Realistic cinematic short film, 30 seconds, European Portuguese language. No dialogue — story told visually with ambient sound only.
+
+SCENE 1 [0–6s]: Interior of a modern but modest office in Portugal. A woman, late 30s to early 40s, professional appearance, business casual clothing, sits at a desk. On the desk: car keys, a folder labelled "Viaturas", printed fuel invoices, a maintenance schedule pinned to a corkboard behind her. She looks slightly overwhelmed sorting through papers. Warm, natural light from a window. Handheld camera, close on details.
+
+SCENE 2 [6–16s]: She leans back and picks up her smartphone. Opens LinkedIn. She scrolls casually — her expression is neutral. She suddenly stops. Close-up on phone screen: a FleetWise Solutions post with the headline "Sabe o que é o TCO da sua frota? A maioria das empresas não sabe — e está a pagar por isso." She reads. Her expression shifts from casual to focused. Something is connecting.
+
+SCENE 3 [16–24s]: She lowers the phone. A beat of stillness. She looks at the documents on her desk — the invoices, the car keys — with new eyes. A quiet moment of recognition.
+
+SCENE 4 [24–30s]: She picks up the phone with intent. Types "FleetWise" into LinkedIn search. Finds the page. Taps "Mensagem". Cut to black. END CARD: dark navy background (#0D1B2A), green text "FleetWise" in bold sans-serif, smaller white tagline "Clareza onde os outros vêem complexidade.", URL "fleetwisesolutions.pt" in small green mono font.
+
+Colour grade: slightly desaturated, warm tones. No music — only ambient office sounds, paper shuffling, distant city noise.
+
+POST-PRODUCTION NOTE: Add FleetWise logo as overlay (bottom-right corner, 10% opacity background, throughout scenes 3–4) using CapCut or equivalent editor.</div>
+    </div>
+
+    <!-- HEYGEN -->
+    <div class="prompt-box" style="margin-bottom:20px;">
+      <div class="prompt-label">↳ HEYGEN — Configuração + Script PT-PT</div>
+      <div class="prompt-text">CONFIGURAÇÃO:
+— Avatar: mulher europeia, 38–42 anos, aspecto profissional, roupa business casual
+— Background: escritório moderno neutro ou fundo desfocado
+— Language: Portuguese (Portugal) — NÃO seleccionar Brazilian Portuguese
+— Pacing: pausado e natural, tom conversacional — não comercial
+— Brand Kit: fazer upload do logo FleetWise PNG → posicionar canto inferior direito → activar do início ao fim
+
+SCRIPT:
+[pausa inicial — olha ligeiramente para baixo como se estivesse a recordar]
+"Eu geria a frota da empresa há anos. Contratos, seguros, inspeções... achava que estava tudo controlado."
+[pausa 1 segundo]
+"Até ver um post no LinkedIn a falar de TCO — Custo Total de Propriedade. Nunca tinha ouvido falar."
+[leve mudança de expressão — reconhecimento]
+"Quando percebi o que significava para a nossa frota... percebi que não sabia nada do que estava realmente a pagar."
+[resoluta, directa para câmara]
+"Contactei a FleetWise nesse mesmo dia. Devia ter feito isso muito antes."
+[pausa final]
+
+END CARD: activar slide final automático com logo FleetWise + "fleetwisesolutions.pt"</div>
+    </div>
+
+    <!-- SYNTHESIA -->
+    <div class="prompt-box" style="margin-bottom:0;">
+      <div class="prompt-label">↳ SYNTHESIA — Configuração + Script com motion graphics PT-PT</div>
+      <div class="prompt-text">CONFIGURAÇÃO:
+— Template: Documentary / Testimonial
+— Avatar: perfil feminino europeu, profissional (seleccionar da biblioteca Synthesia)
+— Language: Portuguese (Portugal)
+— Activar legendas automáticas PT-PT
+— Brand Kit: upload logo FleetWise PNG → posicionar canto inferior direito → visível em todos os slides
+— Activar cor de marca: verde #00B67A
+
+SCRIPT COM INDICAÇÕES DE TEXTO EM SOBREPOSIÇÃO:
+[TEXTO ECRÃ: "Gestora de frota, PME portuguesa"]
+"Eu geria a frota da empresa há anos. Achava que estava tudo controlado."
+
+[TEXTO ECRÃ: "TCO — Total Cost of Ownership"]
+"Até ver um post no LinkedIn sobre TCO. Um conceito que nunca tinha ouvido."
+
+[TEXTO ECRÃ: "O custo real de uma frota vai muito além da prestação mensal."]
+"Quando percebi o que significava... percebi que não sabia o que estava realmente a pagar."
+
+[TEXTO ECRÃ: logo FleetWise + "fleetwisesolutions.pt"]
+"Contactei a FleetWise nesse mesmo dia. Devia ter feito isso muito antes."
+
+NOTA: usar transições suaves entre slides. Cor de fundo dos text overlays: #0D1B2A com opacidade 80%.</div>
+    </div>
   </div>
 </section>
 
