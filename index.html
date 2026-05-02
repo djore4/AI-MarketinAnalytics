@@ -196,8 +196,22 @@
 
     /* NAV */
     nav { padding: 0 20px; height: 56px; }
-    .nav-links { display: none; }
     .nav-logo { font-size: 1rem; }
+    #hamburger { display: block !important; }
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 56px; left: 0; right: 0;
+      background: rgba(13,27,42,0.98);
+      backdrop-filter: blur(16px);
+      padding: 16px 24px 24px;
+      gap: 4px;
+      border-bottom: 1px solid var(--border);
+      z-index: 99;
+    }
+    .nav-links.open a { padding: 12px 16px; font-size: 0.82rem; border-radius: 8px; display: block; }
 
     /* HERO */
     .hero { padding: 90px 24px 60px; }
@@ -272,14 +286,15 @@
 
 <nav>
   <a href="#hero" class="nav-logo">Fleet<span>Wise</span></a>
-  <ul class="nav-links">
-    <li><a href="#ponto1">I. IA</a></li>
-    <li><a href="#ponto2">II. Research</a></li>
-    <li><a href="#ponto3">III. Campanha</a></li>
-    <li><a href="#ponto4">IV. Automação</a></li>
-    <li><a href="#ponto5">V. Métricas</a></li>
-    <li><a href="#ponto6">VI. Dashboard</a></li>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#ponto1" onclick="closeMenu()">I. IA</a></li>
+    <li><a href="#ponto2" onclick="closeMenu()">II. Research</a></li>
+    <li><a href="#ponto3" onclick="closeMenu()">III. Campanha</a></li>
+    <li><a href="#ponto4" onclick="closeMenu()">IV. Automação</a></li>
+    <li><a href="#ponto5" onclick="closeMenu()">V. Métricas</a></li>
+    <li><a href="#ponto6" onclick="closeMenu()">VI. Dashboard</a></li>
   </ul>
+  <button id="hamburger" onclick="toggleMenu()" aria-label="Menu" style="display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--grey-light);font-size:1.4rem;line-height:1;">☰</button>
 </nav>
 
 <div class="hero" id="hero">
@@ -312,7 +327,7 @@
 
   <div class="prompt-box reveal">
     <div class="prompt-label">↳ Prompt utilizado</div>
-    <div class="prompt-text">"És um consultor especialista em aplicações de Inteligência Artificial para empresas de serviços B2B. A FleetWise é uma startup portuguesa de gestão de frotas para PMEs, independente de locadoras, com proposta de valor centrada em otimização fiscal, redução de TCO e consultoria imparcial. Opera no segmento de frotas entre 3 e 30 viaturas. Faz um brainstorming estruturado de oportunidades de IA aplicáveis ao modelo de negócio, cobrindo as dimensões: aquisição de clientes, entrega do serviço, operação interna e produto, tendo em conta as diretrizes e sugestões desenvolvidas no trabalho de Estratégia Empresarial, em anexo. Distribui a informação através de quatro blocos à largura da página e adiciona pequenos ícones que sejam coerentes com o seu conteúdo."</div>
+    <div class="prompt-text">"És um consultor especialista em aplicações de Inteligência Artificial para empresas de serviços B2B. A FleetWise é uma startup portuguesa de gestão de frotas para PMEs, independente de locadoras, com proposta de valor centrada em otimização fiscal, redução de TCO e consultoria imparcial. Opera no segmento de frotas entre 3 e 30 viaturas. Faz um brainstorming estruturado de oportunidades de IA aplicáveis ao modelo de negócio, cobrindo as dimensões: aquisição de clientes, entrega do serviço, operação interna e produto."</div>
   </div>
 
   <div class="card-groups-wrapper reveal">
@@ -1168,6 +1183,26 @@ END CARD: activar slide final automático com logo FleetWise + "fleetwisesolutio
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
   reveals.forEach(el => observer.observe(el));
+
+  // Hamburger menu
+  window.toggleMenu = function() {
+    var links = document.getElementById('nav-links');
+    var btn = document.getElementById('hamburger');
+    links.classList.toggle('open');
+    btn.textContent = links.classList.contains('open') ? '✕' : '☰';
+  };
+  window.closeMenu = function() {
+    var links = document.getElementById('nav-links');
+    var btn = document.getElementById('hamburger');
+    links.classList.remove('open');
+    btn.textContent = '☰';
+  };
+  // Close on outside click
+  document.addEventListener('click', function(e) {
+    var nav = document.querySelector('nav');
+    if (!nav.contains(e.target)) closeMenu();
+  });
+
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
